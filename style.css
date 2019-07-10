@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+div {
+    border: solid black 1px;
+    margin: 1em;
+}
+
 .barstools {
     display: flex;
     justify-content: space-evenly;
@@ -20,10 +25,38 @@
     display: flex;
     justify-content: space-evenly;
     width: auto;
-    border: solid black 1px;
     height: 5em;
 }
 
 .serving-area {
     display: flex;
+    justify-content: space-evenly;
+    margin: 1em;
+}
+
+.glassware {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.garnishes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.supplies {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mixer-selection {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.spirit-selection {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
