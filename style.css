@@ -15,3 +15,15 @@
     width: 5em;
     margin: 1em;
 }
+
+.counter-top {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    border: solid black 1px;
+    height: 5em;
+}
+
+.serving-area {
+    display: flex;
+}
