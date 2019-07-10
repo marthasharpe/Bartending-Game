@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.barstools {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.customer {
+    border: solid black 1px;
+    height: 5em;
+    width: 5em;
+    margin: 1em;
+}
