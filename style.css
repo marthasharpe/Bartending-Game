@@ -11,11 +11,13 @@ div {
 
 .barstools {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
 .customer {
     border: solid black 1px;
+    border-radius: 2em;
     height: 5em;
     width: 5em;
     margin: 1em;
@@ -24,28 +26,62 @@ div {
 .counter-top {
     display: flex;
     justify-content: space-evenly;
-    width: auto;
-    height: 5em;
+    flex-flow: row wrap;
+    border: solid black 1px;
 }
 
 .serving-area {
     display: flex;
     justify-content: space-evenly;
+    width: 5em;
+    height: 5em;
     margin: 1em;
+}
+
+.reference {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.staging-area {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.ref,
+.stag {
+    width: 5em;
+    height: 5em;
 }
 
 .glassware {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
+}
+
+.glass {
+    width: 3em;
+    height: 3em;
 }
 
 .garnishes {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
 .supplies {
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.back-bar {
+    display: flex;
+    flex-flow: row wrap;
     justify-content: space-evenly;
 }
 
@@ -59,4 +95,10 @@ div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+}
+
+.mixer,
+.spirit {
+    width: 3em;
+    height: 5em;
 }
