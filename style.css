@@ -52,8 +52,8 @@ div {
 
 .ref,
 .stag {
-    width: 5em;
-    height: 5em;
+    width: 6em;
+    height: 6em;
 }
 
 .glassware {
@@ -64,13 +64,18 @@ div {
 
 .glass {
     width: 3em;
-    height: 3em;
+    height: 5em;
 }
 
 .garnishes {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+}
+
+.garnish {
+    width: 3em;
+    height: 3em;
 }
 
 .supplies {
@@ -100,5 +105,5 @@ div {
 .mixer,
 .spirit {
     width: 3em;
-    height: 5em;
+    height: 6em;
 }
