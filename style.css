@@ -4,9 +4,80 @@
     box-sizing: border-box;
 }
 
-div {
-    border: solid black 1px;
-    margin: 1em;
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Sticky bar on the top of the page */
+.stats-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+    border-color: rgb(83, 83, 83);
+    cursor: pointer;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: rgb(83, 83, 83);
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(83, 83, 83);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: white;
+    padding: .8rem 1rem;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+      background-color: black;
+    }
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {
+      display:block;
+    }
+
+.shaker,
+.tips {
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
 }
 
 .barstools {
@@ -17,10 +88,10 @@ div {
 
 .customer {
     border: solid black 1px;
-    border-radius: 2em;
-    height: 5em;
-    width: 5em;
-    margin: 1em;
+    border-radius: 4em;
+    height: 8rem;
+    width: 8rem;
+    margin: 1rem;
 }
 
 .counter-top {
@@ -28,14 +99,15 @@ div {
     justify-content: space-evenly;
     flex-flow: row wrap;
     border: solid black 1px;
+    width: 100%;
 }
 
 .serving-area {
     display: flex;
     justify-content: space-evenly;
-    width: 5em;
-    height: 5em;
-    margin: 1em;
+    width: auto;
+    height: 8rem;
+    margin: 1rem;
 }
 
 .reference {
@@ -50,10 +122,10 @@ div {
     justify-content: space-evenly;
 }
 
-.ref,
 .stag {
-    width: 6em;
-    height: 6em;
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem;
 }
 
 .glassware {
@@ -63,8 +135,9 @@ div {
 }
 
 .glass {
-    width: 3em;
-    height: 5em;
+    width: 3rem;
+    height: 5rem;
+    margin: 1rem;
 }
 
 .garnishes {
@@ -74,8 +147,9 @@ div {
 }
 
 .garnish {
-    width: 3em;
-    height: 3em;
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
 }
 
 .supplies {
@@ -94,16 +168,20 @@ div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    border: solid black 1px;
 }
 
 .spirit-selection {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    border: solid black 1px;
 }
 
 .mixer,
 .spirit {
-    width: 3em;
-    height: 6em;
+    width: 4rem;
+    height: 8rem;
+    margin: 1rem;
+    border: solid black 1px;
 }

@@ -6,59 +6,59 @@
     <link rel="stylesheet" href="style.css">
     <title>Bartending Game</title>
 </head>
-<body>
-    <div class="front-bar">
-        <div class="barstools">
-            <div class="customer">I am a customer.</div>
-            <div class="customer">I am a customer.</div>
-            <div class="customer">I am a customer.</div>
-            <div class="customer">I am a customer.</div>
-        </div>
-        <div class="counter-top">
-            <div class="serving-area">Serving area.</div>
-            <div class="serving-area">Serving area.</div>
-            <div class="serving-area">Serving area.</div>
-            <div class="serving-area">Serving area.</div>
-        </div>
-    </div>
 
-    <div class="back-bar">
-        <div class="reference">
-            <div class="ref register">Cash Register</div>
-            <div class="ref manual">Mixology Manual</div>
+<body>
+    <div class="stats-bar">
+        <div class="dropdown">
+            <button onClick="myFunction()" class="dropbtn">Mixology Manual</button>
+            <div class="dropdown-content">
+                <a href="#">Rum and Coke</a>
+                <a href="#">Scotch and Soda</a>
+                <a href="#">Whiskey Sour</a>
+            </div>
         </div>
-        <div class="staging-area">
-            <div class="stag ice">Ice Supply</div>
-            <div class="stag shaker">Shaker/Strainer</div>
-        </div>
+        <div class="shaker">Shaker</div>
+        <div class="tips">Tips</div>
     </div>
     
-    <div class="supplies">
-        <div class="glassware">
-            <div class="glass shot">Shot glass</div>
-            <div class="glass rocks">Rocks glass</div>
-            <div class="glass highball">Highball glass</div>
-            <div class="glass martini">Martini glass</div>
+    <div class="main">
+    <div class="left">
+        <div class="front-bar">
+            <div class="barstools">
+                <div class="customer">I am a customer.</div>
+                <div class="customer">I am a customer.</div>
+            </div>
+            <div class="counter-top">
+                <div class="serving-area">Serving area.</div>
+                <div class="serving-area">Serving area.</div>
+            </div>
         </div>
-        <div class="garnishes">
-            <div class="garnish cherry">Cherries</div>
-            <div class="garnish lime">Limes</div>
-            <div class="garnish lemon">Lemons</div>
-            <div class="garnish olive">Olives</div>
+    
+        <div class="back-bar">
+            <div class="staging-area">
+                <div class="stag ice">Ice Supply</div>
+                <div class="stag shaker">Mixing Area</div>
+            </div>
+        </div>
+        
+        <div class="supplies">
+            <div class="glassware">
+                <div class="glass shot">Shot glass</div>
+                <div class="glass rocks">Rocks glass</div>
+                <div class="glass highball">Highball glass</div>
+                <div class="glass martini">Martini glass</div>
+            </div>
+            <div class="garnishes">
+                <div class="garnish cherry">Cherries</div>
+                <div class="garnish lime">Limes</div>
+                <div class="garnish lemon">Lemons</div>
+                <div class="garnish olive">Olives</div>
+            </div>
         </div>
     </div>
 
-    <div class="rails">
-        <div class="mixer-selection">
-            <div class="mixer">Coke</div>
-            <div class="mixer">7Up</div>
-            <div class="mixer">Tonic</div>
-            <div class="mixer">Soda</div>
-            <div class="mixer">Sour</div>
-            <div class="mixer">Orange</div>
-            <div class="mixer">Cranberry</div>
-            <div class="mixer">Pineapple</div>
-        </div>
+
+    <div class="right">
         <div class="spirit-selection">
             <div class="spirit">Vodka</div>
             <div class="spirit">Gin</div>
@@ -69,7 +69,17 @@
             <div class="spirit">Rum</div>
             <div class="spirit">Vermouth</div>
         </div>
+        <div class="mixer-selection">
+            <div class="mixer">Coke</div>
+            <div class="mixer">7Up</div>
+            <div class="mixer">Tonic</div>
+            <div class="mixer">Soda</div>
+            <div class="mixer">Sour</div>
+            <div class="mixer">Orange</div>
+            <div class="mixer">Cranberry</div>
+            <div class="mixer">Pineapple</div>
+        </div>
     </div>
-
+    </div>
 </body>
 </html>
