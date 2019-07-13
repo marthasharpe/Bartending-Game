@@ -1,6 +1,4 @@
-/* Simplified Version
-
-class Drink() {
+class Drink {
     constructor(name, glass, ice, spirit, mixer, garnish) {
         this.name = name;
         this.glass = glass;
@@ -11,8 +9,10 @@ class Drink() {
     }
 }
 
-const rumCoke = new Drink('Rum and Coke', )
+const rumCoke = new Drink('Rum and Coke', 'highball', true, 'rum', 'coke', 'none');
+console.log(rumCoke);
 
+/*
 const drinkArray = [rumCoke, scotchSoda, whiskeySour, ginTonic];
 
 function takeOrder(e) {
