@@ -17,12 +17,17 @@ const drinkArray = [rumCoke, ginTonic, scotchSoda, screwdriver, whiskeySour];
 console.log(rumCoke);
 console.log(drinkArray);
 
+const drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
+console.log(drinkOrder);
+
 /*
-function takeOrder(e) {
-    alert `I want a ${Drink.name}.`
+function drinkOrder(drinkArray) {
+    return ;
+    console.log(`I want a ${Drink.name}.`)
 }
 
-const order = document.addEventListener('click', takeOrder);
+
+const order = document.addEventListener('click', drinkOrder);
 
 onClick add items to drinkServed array.
 
@@ -33,7 +38,7 @@ Add a mixer.
 Add a garnish?
 []
 
-if (drinkServed === drinkOrdered) {
+if (drinkServed === drinkOrder) {
     alert "Thanks! Keep the change."
 } else {
     alert "You got my drink wrong."
