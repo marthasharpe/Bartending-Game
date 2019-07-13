@@ -1,36 +1,34 @@
 class Drink {
-    constructor(name, glass, ice, spirit, mixer, garnish) {
+    constructor(name, spirit, mixer, garnish) {
         this.name = name;
-        this.glass = glass;
-        this.ice = ice;
         this.spirit = spirit;
         this.mixer = mixer;
         this.garnish = garnish;
     }
 }
 
-const rumCoke = new Drink('Rum and Coke', 'highball', true, 'rum', 'coke', 'none');
+const rumCoke = new Drink('Rum and Coke', 'rum', 'coke', 'lemon');
+const ginTonic = new Drink('Gin and Tonic', 'gin', 'tonic', 'lime');
+const scotchSoda = new Drink('Scotch and Soda', 'scotch', 'soda', 'none');
+const screwdriver = new Drink('Screwdriver', 'tequila', 'orange juice', 'orange');
+const whiskeySour = new Drink('Whiskey Sour', 'bourbon', 'sour mix', 'cherry');
+
+const drinkArray = [rumCoke, ginTonic, scotchSoda, screwdriver, whiskeySour];
 console.log(rumCoke);
+console.log(drinkArray);
 
 /*
-const drinkArray = [rumCoke, scotchSoda, whiskeySour, ginTonic];
-
 function takeOrder(e) {
-    alert `I want a ${Drink}.`
+    alert `I want a ${Drink.name}.`
 }
 
 const order = document.addEventListener('click', takeOrder);
 
-
 onClick add items to drinkServed array.
 
-Which glass?
+Choose a spirit.
 []
-Ice or no ice?
-[]
-Which spirit?
-[]
-Which mixer(s)?
+Add a mixer.
 []
 Add a garnish?
 []
