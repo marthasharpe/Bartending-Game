@@ -21,21 +21,19 @@ function takeOrder() {
     console.log(`I want a ${drinkOrder.name}.`)
 }
 
-function mixDrink(e) {
     let spiritClick = document.getElementById('');
     let mixerClick = document.getElementById('');
     let garnishClick = document.getElementById('');
     let drinkServed = new Drink(drinkOrder.name, spiritClick, mixerClick, garnishClick);
-    console.log(drinkServed);
+
+function serveDrink() {
+    if (drinkServed === drinkOrder) {
+        console.log("Thanks! Keep the change.")
+    } else {
+        console.log("You got my drink wrong.")
+    }
 }
 
 /*
-
-if (drinkServed === drinkOrder) {
-    alert "Thanks! Keep the change."
-} else {
-    alert "You got my drink wrong."
-}
-
 Optional feature: 'Get a Hint' button. Lists the attributes of the drinkOrder.
 */
