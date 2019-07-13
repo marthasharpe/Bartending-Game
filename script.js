@@ -21,20 +21,15 @@ function takeOrder() {
     console.log(`I want a ${drinkOrder.name}.`)
 }
 
-function mixDrink() {
-    
+function mixDrink(e) {
+    let spiritClick = document.getElementById('');
+    let mixerClick = document.getElementById('');
+    let garnishClick = document.getElementById('');
+    let drinkServed = new Drink(drinkOrder.name, spiritClick, mixerClick, garnishClick);
+    console.log(drinkServed);
 }
 
-/*addEventListener('click', drinkOrder);
-
-onClick add items to drinkServed array.
-
-Choose a spirit.
-[]
-Add a mixer.
-[]
-Add a garnish?
-[]
+/*
 
 if (drinkServed === drinkOrder) {
     alert "Thanks! Keep the change."
