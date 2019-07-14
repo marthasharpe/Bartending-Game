@@ -20,14 +20,18 @@ const drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
 function takeOrder() {
     console.log(`I want a ${drinkOrder.name}.`)
 }
+    
+    let drinkServed = new Drink();
+    drinkServed.name = drinkOrder.name;
+    drinkServed.spirit = '';
+    drinkServed.mixer = '';
+    drinkServed.garnish = '';
+    console.log(drinkServed);
 
-    let spiritClick = document.getElementById('');
-    let mixerClick = document.getElementById('');
-    let garnishClick = document.getElementById('');
-    let drinkServed = new Drink(drinkOrder.name, spiritClick, mixerClick, garnishClick);
+/* onClick document.getElementById('click', ) if element class=garnish add to drinkServed.garnish */
 
 function serveDrink() {
-    if (drinkServed === drinkOrder) {
+    if (drinkServed.spirit === drinkOrder.spirit && drinkServed.mixer === drinkOrder.mixer && drinkServed.garnish === drinkOrdered.garnish) {
         console.log("Thanks! Keep the change.")
     } else {
         console.log("You got my drink wrong.")
