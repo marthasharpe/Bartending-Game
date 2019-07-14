@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    min-width: 400px;
+    max-width: 1000px;
+    text-align: center;
+}
+
 .buttons {
     display: flex;
     flex-flow: row wrap;
@@ -19,55 +28,18 @@
     padding: 1rem;
 }
 
-.counter-top {
-    display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-    border: solid black 1px;
-    width: 100%;
-}
-
-.serving-area {
-    display: flex;
-    justify-content: space-evenly;
-    width: auto;
-    height: 8rem;
-    margin: 1rem;
-}
-
-.glassware {
-    display: flex;
-    justify-content: space-around;
-}
-
-.glass {
-    border: solid black 1px;
-}
-
-.garnishes {
-    display: flex;
-    justify-content: space-between;
-}
-
-.ice {
-    width: auto;
-    height: auto;
-    border: solid black 1px;
-}
-
-.garnish {
-    width: auto;
-    height: auto;
-    border: solid black 1px;
-}
-
+.glassware,
+.garnishes,
 .mixer-selection,
 .spirit-selection {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     border: solid black 1px;
 }
 
+.glass,
+.garnish,
 .mixer,
 .spirit {
     width: 4rem;

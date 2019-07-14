@@ -21,12 +21,12 @@ function takeOrder() {
     console.log(`I want a ${drinkOrder.name}.`)
 }
     
-    let drinkServed = new Drink();
-    drinkServed.name = drinkOrder.name;
-    drinkServed.spirit = '';
-    drinkServed.mixer = '';
-    drinkServed.garnish = '';
-    console.log(drinkServed);
+let drinkServed = new Drink();
+drinkServed.name = drinkOrder.name;
+drinkServed.spirit = '';
+drinkServed.mixer = '';
+drinkServed.garnish = '';
+console.log(drinkServed);
 
 /* onClick document.getElementById('click', ) if element class=garnish add to drinkServed.garnish */
 
