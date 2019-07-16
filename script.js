@@ -13,8 +13,9 @@ const shotGin = {
 };
 
 const drinkArray = [shotRum, shotGin];
-const glassArray = ['Shot'];
+const glassArray = ['Shot', 'Highball'];
 const spiritArray = ['Rum', 'Gin'];
+const mixerArray = ['Coke', 'Tonic'];
 
 let drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
 let newDrink = {};
@@ -24,16 +25,16 @@ function takeOrder() {
 };
 
 function serveDrink() {
-    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit) {
-        console.log("Thanks! Keep the change.")
+    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
+        console.log("Thanks! Here's your tip!")
         drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
         newDrink = {};
     } else {
-        console.log("You got my drink wrong.")
+        console.log("You got my drink wrong. Try again.")
+        console.log(newDrink);
         newDrink = {};
     }
-    console.log(newDrink);
-    console.log(drinkOrder);
+
 };
 
 for(let i = 0; i < glassArray.length; i++) {
@@ -56,6 +57,17 @@ for(let i = 0; i < spiritArray.length; i++) {
     document.getElementsByClassName('spirit-selection')[0].appendChild(spiritItem);
     spiritItem.addEventListener('click', () => {
         newDrink.spirit = spiritName;
+    });
+};
+
+for(let i = 0; i < mixerArray.length; i++) {
+    let mixerName = mixerArray[i];
+    let mixerItem = document.createElement('li');
+    mixerItem.innerText = mixerName;
+    mixerItem.className = 'mixer'; //Each <li> has class= mixer" 
+    document.getElementsByClassName('mixer-selection')[0].appendChild(mixerItem);
+    mixerItem.addEventListener('click', () => {
+        newDrink.mixer = mixerName;
     });
 };
 
