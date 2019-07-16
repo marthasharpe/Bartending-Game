@@ -12,12 +12,13 @@ body {
     text-align: center;
 }
 
-.buttons {
+.customers-at-bar {
     display: flex;
     flex-direction: column;
 }
 
-.button {
+.take-order,
+.serve-drink {
     border: solid black 1px;
     border-radius: 1em;
     margin: 1rem;
