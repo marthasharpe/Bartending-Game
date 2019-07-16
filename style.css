@@ -29,8 +29,8 @@ li {
     list-style-type: none;
 }
 
-.glassware,
-.garnishes,
+.glass-selection,
+.garnish-selection,
 .mixer-selection,
 .spirit-selection {
     display: flex;
