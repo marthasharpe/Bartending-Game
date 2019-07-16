@@ -10,9 +10,10 @@ const ginTonic = {
 
 const drinkArray = [rumCoke, ginTonic];
 const spiritArray = ['rum', 'gin'];
-const drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
+let drinkOrder = {};
 
 function takeOrder() {
+    drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     console.log(`I want a ${drinkOrder.name}.`)
     // can change the text on the button or add a popup
 }
@@ -29,12 +30,8 @@ for(let i = 0; i < spiritArray.length; i++) {
     });
 }
 
-let drinkServed = {
-    name: drinkOrder.name,
-    spirit: '',
-};
+let drinkServed = {};
 
-console.log(drinkServed);
 function serveDrink() {
     if (drinkServed.spirit === drinkOrder.spirit) {
         console.log("Thanks! Keep the change.")
