@@ -16,19 +16,17 @@ const drinkArray = [shotRum, shotGin];
 const glassArray = ['Shot'];
 const spiritArray = ['Rum', 'Gin'];
 
-let drinkOrder = {};
+let drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
 let newDrink = {};
 
 function takeOrder() {
-    //Generate random drinkOrder from drinkArray onClick.
-    drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     console.log(`I want a ${drinkOrder.name}.`);
 };
 
 function serveDrink() {
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit) {
         console.log("Thanks! Keep the change.")
-        drinkOrder = {};
+        drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
         newDrink = {};
     } else {
         console.log("You got my drink wrong.")
