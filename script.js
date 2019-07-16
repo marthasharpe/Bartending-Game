@@ -1,43 +1,46 @@
-class Drink {
-    constructor(name, spirit, mixer, garnish) {
-        this.name = name;
-        this.spirit = spirit;
-        this.mixer = mixer;
-        this.garnish = garnish;
-    }
+// Drinks
+const rumCoke = { 
+    name: 'Rum and Coke', 
+    spirit: 'rum',
+};
+const ginTonic = {
+    name: 'Gin and Tonic',
+    spirit: 'gin',
 }
 
-/*List of Drinks*/
-const rumCoke = new Drink('Rum and Coke', 'rum', 'coke', 'lemon');
-const ginTonic = new Drink('Gin and Tonic', 'gin', 'tonic', 'lime');
-const scotchSoda = new Drink('Scotch and Soda', 'scotch', 'soda', 'none');
-const screwdriver = new Drink('Screwdriver', 'tequila', 'orange juice', 'orange');
-const whiskeySour = new Drink('Whiskey Sour', 'bourbon', 'sour mix', 'cherry');
-
-const drinkArray = [rumCoke, ginTonic, scotchSoda, screwdriver, whiskeySour];
+const drinkArray = [rumCoke, ginTonic];
+const spiritArray = ['rum', 'gin'];
 const drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
 
 function takeOrder() {
     console.log(`I want a ${drinkOrder.name}.`)
+    // can change the text on the button or add a popup
 }
-    
-let drinkServed = new Drink();
-drinkServed.name = drinkOrder.name;
-drinkServed.spirit = '';
-drinkServed.mixer = '';
-drinkServed.garnish = '';
+
+for(let i = 0; i < spiritArray.length; i++) {
+    let spiritName = spiritArray[i];
+    let spiritItem = document.createElement('li');
+    spiritItem.innerText = spiritName;
+    spiritItem.className = 'spirit';
+    document.getElementsByClassName('spirit-selection')[0].appendChild(spiritItem);
+    spiritItem.addEventListener('click', () => {
+        drinkServed.spirit = spiritName;
+        console.log(drinkServed);
+    });
+}
+
+let drinkServed = {
+    name: drinkOrder.name,
+    spirit: '',
+};
+
 console.log(drinkServed);
-
-/* onClick document.getElementById('click', ) if element class=garnish add to drinkServed.garnish */
-
 function serveDrink() {
-    if (drinkServed.spirit === drinkOrder.spirit && drinkServed.mixer === drinkOrder.mixer && drinkServed.garnish === drinkOrdered.garnish) {
+    if (drinkServed.spirit === drinkOrder.spirit) {
         console.log("Thanks! Keep the change.")
     } else {
         console.log("You got my drink wrong.")
     }
-}
+};
 
-/*
-Optional feature: 'Get a Hint' button. Lists the attributes of the drinkOrder.
-*/
+//Optional feature: 'Get a Hint' button. Lists the attributes of the drinkOrder.

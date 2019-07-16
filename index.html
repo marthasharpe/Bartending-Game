@@ -4,52 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
     <title>Bartending Game</title>
 </head>
 
-<body>
+<body id="hello">
     <div class="buttons">
-        <button onclick="takeOrder()" class="button">Take order.</button>
-        <button onclick="serveDrink()" class="button">Serve drink.</button>
+        <button onclick="takeOrder()" class="button" id="take-order">Take order.</button>
+        <button onclick="serveDrink()" class="button" id="serve-drink">Serve drink.</button>
     </div>
+    <ul class="spirit-selection">
 
-    <div class="supplies">
-    <div class="glassware">
-        <div class="glass" id="shot">Shot glass</div>
-        <div class="glass" id="rocks">Rocks glass</div>
-        <div class="glass" id="highball">Highball glass</div>
-        <div class="glass" id="martini">Martini glass</div>
-    </div>
-    
-    <div class="garnishes">
-        <div class="garnish" id="cherry">Cherries</div>
-        <div class="garnish" id="lime">Limes</div>
-        <div class="garnish" id="lemon">Lemons</div>
-        <div class="garnish" id="olive">Olives</div>
-    </div>
+    </ul>
 
-    <div class="spirit-selection">
-        <div class="spirit" id="vodka">Vodka</div>
-        <div class="spirit" id="gin">Gin</div>
-        <div class="spirit" id="bourbon">Bourbon</div>
-        <div class="spirit" id="scotch">Scotch</div>
-        <div class="spirit" id="triplesec">Triplesec</div>
-        <div class="spirit" id="tequila">Tequila</div>
-        <div class="spirit" id="rum">Rum</div>
-        <div class="spirit" id="vermouth">Vermouth</div>
     </div>
-    
-    <div class="mixer-selection">
-        <div class="mixer" id="coke">Coke</div>
-        <div class="mixer" id="7up">7Up</div>
-        <div class="mixer" id="tonic">Tonic</div>
-        <div class="mixer" id="soda">Soda</div>
-        <div class="mixer" id="sour">Sour</div>
-        <div class="mixer" id="orange">Orange</div>
-        <div class="mixer" id="cranberry">Cranberry</div>
-        <div class="mixer" id="pineapple">Pineapple</div>
-    </div>
-    </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
