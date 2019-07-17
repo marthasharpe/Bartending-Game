@@ -34,11 +34,11 @@ const mixerArray = ['Coke', 'Tonic'];
 let drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
 let newDrink = {};
 
-function takeOrder() {
+takeOrder = () => {
     console.log(`I want a ${drinkOrder.name}.`);
 };
 
-function serveDrink() {
+serveDrink = () => {
     console.log(newDrink);
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
         console.log("Thanks! Here's your tip!")
@@ -51,17 +51,21 @@ function serveDrink() {
 
 };
 
-for(let i = 0; i < glassArray.length; i++) {
-    let glassName = glassArray[i];
-    let glassItem = document.createElement('li');
-    glassItem.innerText = glassName;
-    glassItem.className = 'glass'; //Each <li> has class="glass"
-    document.getElementsByClassName('glass-selection')[0].appendChild(glassItem);
-    glassItem.addEventListener('click', () => {
-        newDrink.glass = glassName;
-    });
-};
+// for(let i = 0; i < glassArray.length; i++) {
+//     let glassName = glassArray[i];
+//     let glassItem = document.createElement('li');
+//     glassItem.innerText = glassName;
+//     glassItem.className = 'glass'; //Each <li> has class="glass"
+//     document.getElementsByClassName('glass-selection')[0].appendChild(glassItem);
+//     glassItem.addEventListener('click', () => {
+//         newDrink.glass = glassName;
+//     });
+// };
 
+document.querySelector('.glass-selection').innerHTML = 
+  glassArray.map(glassName => `<li class="glass" id="${glassName}">${glassName}</li>`)
+  .join('');
+  
 //Dynamically populate HTML unordered list with class="spirit-selection" with list items.
 for(let i = 0; i < spiritArray.length; i++) {
     let spiritName = spiritArray[i];
