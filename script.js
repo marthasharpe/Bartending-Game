@@ -48,24 +48,29 @@ serveDrink = () => {
         console.log("You got my drink wrong. Try again.")
         newDrink = {};
     }
-
 };
 
-for(let i = 0; i < glassArray.length; i++) {
-    let glassName = glassArray[i];
-    let glassItem = document.createElement('li');
-    glassItem.innerText = glassName;
-    glassItem.className = 'glass';
-    document.getElementsByClassName('glass-selection')[0].appendChild(glassItem);
-    glassItem.addEventListener('click', () => {
-        newDrink.glass = glassName;
-    });
-};
+const populateList = (supplies, supplyType) => {
+    supplies.forEach(supply => {
+        const listItem = document.createElement('li');
+        listItem.innerText = supply;
+        const itemParent = document.getElementsByClassName(supplyType)[0];
+        itemParent.appendChild(listItem);
+        console.log(itemParent);
+    })
+}
+populateList(glassArray, 'glass-selection');
 
-// The following could populate HTML in fewer lines if I figure out how to add an event listener, too.
-//   document.querySelector('.glass-selection').innerHTML = 
-//   glassArray.map(glassName => `<li class="glass" id="${glassName}">${glassName}</li>`)
-//   .join('');
+// for(let i = 0; i < glassArray.length; i++) {
+//     let glassName = glassArray[i];
+//     let glassItem = document.createElement('li');
+//     glassItem.innerText = glassName;
+//     glassItem.className = 'glass';
+//     document.getElementsByClassName('glass-selection')[0].appendChild(glassItem);
+//     glassItem.addEventListener('click', () => {
+//         newDrink.glass = glassName;
+//     });
+// };
 
 for(let i = 0; i < spiritArray.length; i++) {
     let spiritName = spiritArray[i];
