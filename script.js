@@ -50,16 +50,19 @@ serveDrink = () => {
     }
 };
 
-const populateList = (supplies, supplyType) => {
-    supplies.forEach(supply => {
+const populateList = (supplyStock, supplyDiv, supplyType) => {
+    supplyStock.forEach(supply => {
         const listItem = document.createElement('li');
         listItem.innerText = supply;
-        const itemParent = document.getElementsByClassName(supplyType)[0];
+        listItem.id = supply;
+        listItem.className = supplyType;
+        const itemParent = document.getElementsByClassName(supplyDiv)[0];
         itemParent.appendChild(listItem);
+
         console.log(itemParent);
     })
 }
-populateList(glassArray, 'glass-selection');
+populateList(glassArray, 'glass-selection', 'glass');
 
 // for(let i = 0; i < glassArray.length; i++) {
 //     let glassName = glassArray[i];
