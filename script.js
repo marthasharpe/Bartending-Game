@@ -51,27 +51,27 @@ serveDrink = () => {
 
 };
 
-// for(let i = 0; i < glassArray.length; i++) {
-//     let glassName = glassArray[i];
-//     let glassItem = document.createElement('li');
-//     glassItem.innerText = glassName;
-//     glassItem.className = 'glass'; //Each <li> has class="glass"
-//     document.getElementsByClassName('glass-selection')[0].appendChild(glassItem);
-//     glassItem.addEventListener('click', () => {
-//         newDrink.glass = glassName;
-//     });
-// };
+for(let i = 0; i < glassArray.length; i++) {
+    let glassName = glassArray[i];
+    let glassItem = document.createElement('li');
+    glassItem.innerText = glassName;
+    glassItem.className = 'glass';
+    document.getElementsByClassName('glass-selection')[0].appendChild(glassItem);
+    glassItem.addEventListener('click', () => {
+        newDrink.glass = glassName;
+    });
+};
 
-document.querySelector('.glass-selection').innerHTML = 
-  glassArray.map(glassName => `<li class="glass" id="${glassName}">${glassName}</li>`)
-  .join('');
-  
-//Dynamically populate HTML unordered list with class="spirit-selection" with list items.
+// The following could populate HTML in fewer lines if I figure out how to add an event listener, too.
+//   document.querySelector('.glass-selection').innerHTML = 
+//   glassArray.map(glassName => `<li class="glass" id="${glassName}">${glassName}</li>`)
+//   .join('');
+
 for(let i = 0; i < spiritArray.length; i++) {
     let spiritName = spiritArray[i];
     let spiritItem = document.createElement('li');
     spiritItem.innerText = spiritName;
-    spiritItem.className = 'spirit'; //Each <li> has class="spirit" 
+    spiritItem.className = 'spirit';
     document.getElementsByClassName('spirit-selection')[0].appendChild(spiritItem);
     spiritItem.addEventListener('click', () => {
         newDrink.spirit = spiritName;
@@ -82,7 +82,7 @@ for(let i = 0; i < mixerArray.length; i++) {
     let mixerName = mixerArray[i];
     let mixerItem = document.createElement('li');
     mixerItem.innerText = mixerName;
-    mixerItem.className = 'mixer'; //Each <li> has class= mixer" 
+    mixerItem.className = 'mixer';
     document.getElementsByClassName('mixer-selection')[0].appendChild(mixerItem);
     mixerItem.addEventListener('click', () => {
         newDrink.mixer = mixerName;
