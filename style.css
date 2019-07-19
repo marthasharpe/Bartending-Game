@@ -25,24 +25,15 @@ button {
     padding: 1rem;
 }
 
-li {
-    list-style-type: none;
-}
-
-.glass-selection,
-.garnish-selection,
-.mixer-selection,
-.spirit-selection {
+ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     border: solid black 1px;
 }
 
-.glass,
-.garnish,
-.mixer,
-.spirit {
+li {
+    list-style-type: none;
     width: 4rem;
     height: 8rem;
     margin: 1rem;

@@ -26,9 +26,10 @@ const ginTonic = {
 const drinkArray = [shotRum, shotGin, rumCoke, ginTonic];
 
 //supplyStock arrays
-const glassArray = ['Shot', 'Highball'];
-const spiritArray = ['Rum', 'Gin'];
-const mixerArray = ['Coke', 'Tonic'];
+const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
+const spiritArray = ['Vodka', 'Bourbon', 'Gin', 'Rum'];
+const mixerArray = ['Coke', 'Soda', 'Tonic', 'Sour'];
+const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
 
 let drinkOrder;
 let newDrink = {}
@@ -50,7 +51,7 @@ const populateList = (supplyStock, supplyDiv, supplyType) => {
 populateList(glassArray, 'glass-selection', 'glass');
 populateList(spiritArray, 'spirit-selection', 'spirit');
 populateList(mixerArray, 'mixer-selection', 'mixer');
-
+populateList(garnishArray, 'garnish-selection', 'garnish');
 
 //Event listeners and functions for all the buttons
 
