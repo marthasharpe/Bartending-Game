@@ -17,8 +17,7 @@ body {
     flex-direction: column;
 }
 
-#take-order,
-#serve-drink {
+button {
     border: solid black 1px;
     border-radius: 1em;
     margin: 1rem;
