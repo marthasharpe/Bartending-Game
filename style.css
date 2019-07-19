@@ -17,8 +17,8 @@ body {
     flex-direction: column;
 }
 
-.take-order,
-.serve-drink {
+#take-order,
+#serve-drink {
     border: solid black 1px;
     border-radius: 1em;
     margin: 1rem;

@@ -29,7 +29,7 @@ const spiritArray = ['Rum', 'Gin'];
 const mixerArray = ['Coke', 'Tonic'];
 
 let drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
-let newDrink = {};
+let newDrink = {}
 
 const populateList = (supplyStock, supplyDiv, supplyType) => {
     supplyStock.forEach(supply => {
@@ -49,20 +49,20 @@ populateList(glassArray, 'glass-selection', 'glass');
 populateList(spiritArray, 'spirit-selection', 'spirit');
 populateList(mixerArray, 'mixer-selection', 'mixer');
 
-takeOrder = () => {
-    console.log(`I want a ${drinkOrder.name}.`);
-}
+let takeOrder = document.getElementById("take-order");
+takeOrder.addEventListener("click", () => {
+    takeOrder.innerHTML = `I want a ${drinkOrder.name}.`});
 
-serveDrink = () => {
-    console.log(newDrink);
+let serveDrink = document.getElementById("serve-drink");
+serveDrink.addEventListener("click", () => {
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
-        console.log("Thanks! Here's your tip!")
+        serveDrink.innerHTML = "Thanks! Here's your tip!"
         drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
-        newDrink = {};
+        newDrink = {}
     } else {
-        console.log("You got my drink wrong. Try again.")
-        newDrink = {};
+        serveDrink.innerHTML = "You got my drink wrong. Try again."
+        newDrink = {}
     }
-}
+  });
 
 //Optional feature: 'Get a Hint' button. Lists the attributes of the drinkOrder.
