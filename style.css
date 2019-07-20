@@ -5,17 +5,35 @@
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 6rem 12rem 12rem 12rem;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
+    align-items: center;
     min-width: 400px;
     text-align: center;
 }
 
-.customers-at-bar {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+.customers {
+    grid-area: 2 / 2 / span 1 / span 1;
+}
+
+#word-bubble {
+    grid-area: 1 / 2 / span 1 / span 1;
+    border: solid black 2px;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+#new-drink {
+    grid-area: 3 / 2 / span 1 / span 1;
+    border: solid black 1px;
+    height: 10rem;
+}
+
+.ice {
+    border: solid black 1px;
+    height: 10rem;
 }
 
 button {
@@ -39,4 +57,12 @@ li {
     height: 8rem;
     margin: 1rem;
     border: solid black 1px;
+}
+
+.spirit-selection {
+    grid-area: 3 / 1 / span 2 / span 1;
+}
+
+.mixer-selection {
+    grid-area: 3 / 3 / span 2 / span 1;
 }

@@ -27,8 +27,8 @@ const drinkArray = [shotRum, shotGin, rumCoke, ginTonic];
 
 //supplyStock arrays
 const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
-const spiritArray = ['Vodka', 'Bourbon', 'Gin', 'Rum'];
-const mixerArray = ['Coke', 'Soda', 'Tonic', 'Sour'];
+const spiritArray = ['Vodka', 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
+const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
 const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
 
 let drinkOrder;
@@ -54,26 +54,36 @@ populateList(mixerArray, 'mixer');
 populateList(garnishArray, 'garnish');
 
 //Event listeners and functions for all the buttons
+const wordBubble = document.getElementById("word-bubble");
+const customer = document.getElementById("customer");
+let count = 0;
 
-let newCustomer = document.getElementById("new-customer");
-newCustomer.addEventListener("click", () => {
-    drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
-    newDrink = {}});
-
-let takeOrder = document.getElementById("take-order");
-takeOrder.addEventListener("click", () => {
-    takeOrder.innerText = `I want a ${drinkOrder.name}.`});
-
-let serveDrink = document.getElementById("serve-drink");
-serveDrink.addEventListener("click", () => {
-    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
-        serveDrink.innerText = "Thanks! Here's your tip!"
-    } else {
-        serveDrink.innerText = "You got my drink wrong. Try again."
+customer.addEventListener("click", () => {
+    count++;
+    if (count === 1 || count % 2 === 1) {
+        takeOrder();
+    } else if (count % 2 === 0) {
+        serveDrink();
     }
-  });
+});
 
-  //need to add a price value to each drink and write a function that adds it to the tip jar
+const takeOrder = () => {
+    drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
+    wordBubble.innerText = `I want a ${drinkOrder.name}.`
+    newDrink = {}
+}
+
+const serveDrink = () => {
+    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
+        wordBubble.innerText = "Thanks! Here's your tip!"
+    } else {
+        wordBubble.innerText = "You got my drink wrong."
+    }
+}
+
+
+
+//need to add a price value to each drink and write a function that adds it to the tip jar
 
 //Optional feature: 'Get a Hint' button. Lists the attributes of the drinkOrder.
 // need a place that shows what you've added to newDrink
