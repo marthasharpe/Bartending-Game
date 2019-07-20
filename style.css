@@ -6,7 +6,7 @@
 
 body {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     justify-content: center;
     min-width: 400px;
     text-align: center;
@@ -14,7 +14,8 @@ body {
 
 .customers-at-bar {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 button {
@@ -28,7 +29,7 @@ button {
 ul {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
     border: solid black 1px;
 }
 

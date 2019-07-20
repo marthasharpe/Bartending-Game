@@ -35,23 +35,23 @@ let drinkOrder;
 let newDrink = {}
 
 //Populates HTML lists with supplies and their attributes
-const populateList = (supplyStock, supplyDiv, supplyType) => {
+const populateList = (supplyStock, supplyType) => {
     supplyStock.forEach(supply => {
         const listItem = document.createElement('li');
         listItem.innerText = supply;
         listItem.id = supply;
         listItem.className = supplyType;
-        const itemParent = document.getElementsByClassName(supplyDiv)[0];
+        const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
         itemParent.appendChild(listItem);
         listItem.addEventListener('click', () => {
             newDrink[supplyType] = supply;
         })
     })
 }
-populateList(glassArray, 'glass-selection', 'glass');
-populateList(spiritArray, 'spirit-selection', 'spirit');
-populateList(mixerArray, 'mixer-selection', 'mixer');
-populateList(garnishArray, 'garnish-selection', 'garnish');
+populateList(glassArray, 'glass');
+populateList(spiritArray, 'spirit');
+populateList(mixerArray, 'mixer');
+populateList(garnishArray, 'garnish');
 
 //Event listeners and functions for all the buttons
 
@@ -62,18 +62,17 @@ newCustomer.addEventListener("click", () => {
 
 let takeOrder = document.getElementById("take-order");
 takeOrder.addEventListener("click", () => {
-    takeOrder.innerHTML = `I want a ${drinkOrder.name}.`});
+    takeOrder.innerText = `I want a ${drinkOrder.name}.`});
 
 let serveDrink = document.getElementById("serve-drink");
 serveDrink.addEventListener("click", () => {
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
-        serveDrink.innerHTML = "Thanks! Here's your tip!"
+        serveDrink.innerText = "Thanks! Here's your tip!"
     } else {
-        serveDrink.innerHTML = "You got my drink wrong. Try again."
+        serveDrink.innerText = "You got my drink wrong. Try again."
     }
   });
 
-let takeMoney = document.getElementById("take-money");
   //need to add a price value to each drink and write a function that adds it to the tip jar
 
 //Optional feature: 'Get a Hint' button. Lists the attributes of the drinkOrder.
