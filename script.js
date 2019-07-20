@@ -56,8 +56,8 @@ populateList(garnishArray, 'garnish');
 //Event listeners and functions for all the buttons
 const wordBubble = document.getElementById("word-bubble");
 const customer = document.getElementById("customer");
-let count = 0;
 
+let count = 0;
 customer.addEventListener("click", () => {
     count++;
     if (count === 1 || count % 2 === 1) {
@@ -80,8 +80,6 @@ const serveDrink = () => {
         wordBubble.innerText = "You got my drink wrong."
     }
 }
-
-
 
 //need to add a price value to each drink and write a function that adds it to the tip jar
 
