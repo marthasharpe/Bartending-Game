@@ -22,8 +22,14 @@ const ginTonic = {
     spirit: 'Gin',
     mixer: 'Tonic',
 }
+const scotchSoda = {
+    name: 'Scotch and Soda',
+    glass: 'Highball',
+    spirit: 'Scotch',
+    mixer: 'Soda',
+}
 
-const drinkArray = [shotRum, shotGin, rumCoke, ginTonic];
+const drinkArray = [shotRum, shotGin, rumCoke, ginTonic, scotchSoda];
 
 //supplyStock arrays
 const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];

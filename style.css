@@ -7,14 +7,15 @@
 body {
     display: grid;
     grid-template-rows: 6rem 12rem 12rem 12rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-column-gap: 1rem;
     justify-content: center;
     align-items: center;
     min-width: 400px;
     text-align: center;
 }
 
-.customers {
+#customers {
     grid-area: 2 / 2 / span 1 / span 1;
 }
 
@@ -36,7 +37,7 @@ body {
     height: 10rem;
 }
 
-button {
+#customer {
     border: solid black 1px;
     border-radius: 1em;
     margin: 1rem;
