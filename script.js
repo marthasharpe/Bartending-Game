@@ -53,10 +53,13 @@ populateList(spiritArray, 'spirit');
 populateList(mixerArray, 'mixer');
 populateList(garnishArray, 'garnish');
 
-//Event listeners and functions for all the buttons
+//Elements and event listeners
 const wordBubble = document.getElementById("word-bubble");
 const customer = document.getElementById("customer");
+const drink = document.getElementById("new-drink");
+drink.innerText = `${newDrink}`;
 
+//On customer, every odd click will take order, every even click will serve drink.
 let count = 0;
 customer.addEventListener("click", () => {
     count++;
