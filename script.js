@@ -45,6 +45,7 @@ const populateList = (supplyStock, supplyType) => {
         itemParent.appendChild(listItem);
         listItem.addEventListener('click', () => {
             newDrink[supplyType] = supply;
+            drink.innerText = `${newDrink[supplyType]}`;
         })
     })
 }
@@ -57,7 +58,6 @@ populateList(garnishArray, 'garnish');
 const wordBubble = document.getElementById("word-bubble");
 const customer = document.getElementById("customer");
 const drink = document.getElementById("new-drink");
-drink.innerText = `${newDrink}`;
 
 //On customer, every odd click will take order, every even click will serve drink.
 let count = 0;
