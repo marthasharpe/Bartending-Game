@@ -76,16 +76,19 @@ const newCustomer = () => {
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
 }
-newCustomer();
+window.setTimeout(newCustomer, 2500);
 
-// tracks clicks on customer, every odd click will takeOrder, every even click will serveDrink
+// first click takes order, second click serves drink, third click new customer
 let count = 0;
 customer.addEventListener("click", () => {
     count++;
-    if (count === 1 || count % 2 === 1) {
+    if (count === 1) {
         takeOrder();
-    } else if (count % 2 === 0) {
+    } else if (count === 2) {
         serveDrink();
+    } else {
+        newCustomer();
+        count = 0;
     }
 });
 
@@ -102,7 +105,6 @@ const serveDrink = () => {
         customer.innerText = "😠"
         wordBubble.innerText = "You got my drink wrong."
     }
-    window.setTimeout(newCustomer, 2500); // resets customer after 2.5 seconds
 }
 
 
