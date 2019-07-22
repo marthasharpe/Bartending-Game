@@ -13,18 +13,21 @@ const shotGin = {
 const rumCoke = {
     name: 'Rum and Coke',
     glass: 'Highball',
+    ice: 'Ice',
     spirit: 'Rum',
     mixer: 'Coke',
 }
 const ginTonic = {
     name: 'Gin and Tonic',
     glass: 'Highball',
+    ice: 'Ice',
     spirit: 'Gin',
     mixer: 'Tonic',
 }
 const scotchSoda = {
     name: 'Scotch and Soda',
     glass: 'Highball',
+    ice: 'Ice',
     spirit: 'Scotch',
     mixer: 'Soda',
 }
@@ -36,6 +39,7 @@ const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
 const spiritArray = ['Vodka', 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
 const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
 const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
+const iceArray = ['Ice']
 
 let drinkOrder;
 let newDrink = {}
@@ -59,6 +63,7 @@ populateList(glassArray, 'glass');
 populateList(spiritArray, 'spirit');
 populateList(mixerArray, 'mixer');
 populateList(garnishArray, 'garnish');
+populateList(iceArray, 'ice');
 
 //Elements and event listeners
 const wordBubble = document.getElementById("word-bubble");
@@ -67,6 +72,7 @@ const drink = document.getElementById("new-drink");
 
 // default value for customer
 const newCustomer = () => {
+    drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
 }
@@ -84,13 +90,12 @@ customer.addEventListener("click", () => {
 });
 
 const takeOrder = () => {
-    drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
     newDrink = {}
 }
 
 const serveDrink = () => {
-    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
+    if (newDrink.glass === drinkOrder.glass && newDrink.ice === drinkOrder.ice && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
         customer.innerText ="😊"
         wordBubble.innerText = "Thanks! Here's your tip!"
     } else {
