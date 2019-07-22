@@ -84,8 +84,10 @@ const takeOrder = () => {
 
 const serveDrink = () => {
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
+        customer.innerText ="😊"
         wordBubble.innerText = "Thanks! Here's your tip!"
     } else {
+        customer.innerText = "😠"
         wordBubble.innerText = "You got my drink wrong."
     }
 }
