@@ -65,7 +65,14 @@ const wordBubble = document.getElementById("word-bubble");
 const customer = document.getElementById("customer");
 const drink = document.getElementById("new-drink");
 
-//On customer, every odd click will take order, every even click will serve drink.
+// default value for customer
+const newCustomer = () => {
+    customer.innerText = "🙂"
+    wordBubble.innerText = "Hi. I'm a new customer."
+}
+newCustomer();
+
+// tracks clicks on customer, every odd click will takeOrder, every even click will serveDrink
 let count = 0;
 customer.addEventListener("click", () => {
     count++;
@@ -90,9 +97,13 @@ const serveDrink = () => {
         customer.innerText = "😠"
         wordBubble.innerText = "You got my drink wrong."
     }
+    window.setTimeout(newCustomer, 2500); // resets customer after 2.5 seconds
 }
 
-//need to add a price value to each drink and write a function that adds it to the tip jar
 
-//Optional feature: 'Get a Hint' button. Lists the attributes of the drinkOrder.
-// need a place that shows what you've added to newDrink
+
+// add a price value to each drink and write a function that will add it to the tip jar
+
+// Mixology Manual with a complete list of drinks and their ingredients or Recipe button that shows only the current drink order
+
+// display what the user adds to newDrink
