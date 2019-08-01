@@ -1,4 +1,16 @@
-// Drink menu
+// Drink menu, make into repeatable Drinks object?
+
+// class Drink {
+//     constructor(name, glass, spirit, mixer, garnish) {
+//         this.name = name;
+//         this.glass = glass;
+//         this.spirit = spirit;
+//         this.mixer = mixer;
+//         this.garnish = garnish;
+//     }
+// }
+// const shotRum = new Drink('shot of Rum', 'Shot', 'Rum', null, null);
+// console.log(shotRum);
 
 const shotRum = { 
     name: 'shot of Rum',
@@ -31,7 +43,7 @@ const scotchSoda = {
 
 const drinkArray = [shotRum, shotGin, rumCoke, ginTonic, scotchSoda];
 
-//supplyStock arrays
+//supplyArray arrays, make into repeatable Arrays object?
 const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
 const spiritArray = ['Vodka', 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
 const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
@@ -41,8 +53,8 @@ let drinkOrder;
 let newDrink = {}
 
 //Populates HTML lists with supplies and their attributes
-const populateList = (supplyStock, supplyType) => {
-    supplyStock.forEach(supply => {
+const populateList = (supplyArray, supplyType) => {
+    supplyArray.forEach(supply => {
         const listItem = document.createElement('li');
         listItem.innerText = supply;
         listItem.id = supply;
@@ -50,8 +62,8 @@ const populateList = (supplyStock, supplyType) => {
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
         itemParent.appendChild(listItem);
         listItem.addEventListener('click', () => {
-            newDrink[supplyType] = supply;
-            //drink.innerText = `${supply}`;
+            newDrink[supplyType] = supply;//assign supply to supplyType in newDrink
+            drink.innerText = `${supply}`;
         })
     })
 }
@@ -64,14 +76,15 @@ populateList(garnishArray, 'garnish');
 const wordBubble = document.getElementById("word-bubble");
 const customer = document.getElementById("customer");
 let drink = document.getElementById("new-drink");
+//drink.innerText = [];
 
-// default value for customer
+//default value for new customer
 const newCustomer = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
-}
-window.setTimeout(newCustomer, 2500);
+};
+newCustomer();
 
 // first click takes order, second click serves drink, third click new customer
 let count = 0;
@@ -106,6 +119,6 @@ const serveDrink = () => {
 
 // add a price value to each drink and write a function that will add it to the tip jar
 
-// Mixology Manual with a complete list of drinks and their ingredients or Recipe button that shows only the current drink order
+// "Get Recipe" button that shows the current drink order as a drop-down menu
 
 // display what the user adds to newDrink
