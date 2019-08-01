@@ -27,14 +27,9 @@ body {
 }
 
 #new-drink {
-    grid-area: 3 / 2 / span 1 / span 1;
+    grid-area: 3 / 2 / span 2 / span 1;
     border: solid black 1px;
-    height: 10rem;
-}
-
-.ice {
-    border: solid black 1px;
-    height: 10rem;
+    height: 20rem;
 }
 
 #customer {
