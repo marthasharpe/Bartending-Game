@@ -1,46 +1,21 @@
-// Drink menu, make into repeatable Drinks object?
+// Drink menu
 
-// class Drink {
-//     constructor(name, glass, spirit, mixer, garnish) {
-//         this.name = name;
-//         this.glass = glass;
-//         this.spirit = spirit;
-//         this.mixer = mixer;
-//         this.garnish = garnish;
-//     }
-// }
-// const shotRum = new Drink('shot of Rum', 'Shot', 'Rum', null, null);
-// console.log(shotRum);
+class Drink {
+    constructor(name, glass, spirit, mixer, garnish) {
+        this.name = name;
+        this.glass = glass;
+        this.spirit = spirit;
+        this.mixer = mixer;
+        this.garnish = garnish;
+    }
+}
+const shotRum = new Drink('shot of Rum', 'Shot', 'Rum');
+const shotGin = new Drink('shot of Gin', 'Shot', 'Gin');
+const rumCoke = new Drink('Rum and Coke', 'Highball', 'Rum', 'Coke');
+const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic');
+const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Soda');
 
-const shotRum = { 
-    name: 'shot of Rum',
-    glass: 'Shot', 
-    spirit: 'Rum',
-}
-const shotGin = {
-    name: 'shot of Gin',
-    glass: 'Shot',
-    spirit: 'Gin',
-}
-const rumCoke = {
-    name: 'Rum and Coke',
-    glass: 'Highball',
-    spirit: 'Rum',
-    mixer: 'Coke',
-}
-const ginTonic = {
-    name: 'Gin and Tonic',
-    glass: 'Highball',
-    spirit: 'Gin',
-    mixer: 'Tonic',
-}
-const scotchSoda = {
-    name: 'Scotch and Soda',
-    glass: 'Highball',
-    spirit: 'Scotch',
-    mixer: 'Soda',
-}
-
+//Array of all drinks
 const drinkArray = [shotRum, shotGin, rumCoke, ginTonic, scotchSoda];
 
 //supplyArray arrays, make into repeatable Arrays object?
