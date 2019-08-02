@@ -24,9 +24,6 @@ const spiritArray = ['Vodka', 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Tri
 const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
 const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
 
-let drinkOrder;
-let newDrink = {}
-
 //Populates HTML lists with supplies and their attributes
 const populateList = (supplyArray, supplyType) => {
     supplyArray.forEach(supply => {
@@ -51,7 +48,13 @@ populateList(garnishArray, 'garnish');
 const wordBubble = document.getElementById("word-bubble");
 const customer = document.getElementById("customer");
 let drink = document.getElementById("new-drink");
-//drink.innerText = [];
+let tips = document.getElementById("tip-jar");
+
+//initializing variables
+let drinkOrder;
+let newDrink = {}
+let tipTotal = 0;
+tips.innerText = `Tips: ${tipTotal}`;
 
 //default value for new customer
 const newCustomer = () => {
@@ -84,12 +87,12 @@ const serveDrink = () => {
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
         customer.innerText ="😊"
         wordBubble.innerText = "Thanks! Here's your tip!"
+        tipTotal++;
     } else {
         customer.innerText = "😠"
         wordBubble.innerText = "You got my drink wrong."
     }
 }
-
 
 
 // add a price value to each drink and write a function that will add it to the tip jar
