@@ -30,6 +30,7 @@ const populateList = (supplyArray, supplyType) => {
         const listItem = document.createElement('li');
         listItem.innerText = supply;
         listItem.id = supply;
+        //I want every listItem/supply to have an image, too
         listItem.className = supplyType;
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
         itemParent.appendChild(listItem);
@@ -53,8 +54,7 @@ let tips = document.getElementById("tip-jar");
 //initializing variables
 let drinkOrder;
 let newDrink = {}
-let tipTotal = 0;
-tips.innerText = `Tips: ${tipTotal}`;
+
 
 //default value for new customer
 const newCustomer = () => {
@@ -87,13 +87,18 @@ const serveDrink = () => {
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
         customer.innerText ="😊"
         wordBubble.innerText = "Thanks! Here's your tip!"
-        tipTotal++;
+        takeTip();
     } else {
         customer.innerText = "😠"
         wordBubble.innerText = "You got my drink wrong."
     }
 }
 
+let tipTotal = 0;
+const takeTip = () => {
+    return tipTotal += 1;
+}
+tips.innerText = `Tips: ${tipTotal}`;
 
 // add a price value to each drink and write a function that will add it to the tip jar
 
