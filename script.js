@@ -16,27 +16,33 @@ const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic');
 const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Soda');
 
 //Array of all drinks
-const drinkArray = [shotRum, shotGin, rumCoke, ginTonic, scotchSoda];
+const drinkArray = [rumCoke];
+//const drinkArray = [shotRum, shotGin, rumCoke, ginTonic, scotchSoda];
 
 //supplyArray arrays, make into repeatable Arrays object?
-const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
-const spiritArray = ['Vodka', 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
-const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
+const glassArray = [{name: 'Highball'}];
+//const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
+const spiritArray = [{name: 'Rum', image: './images/Rum.png'}];
+//const spiritArray = [{name: 'Vodka', image: './images/Vodka.png'}, 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
+const mixerArray = [{name: 'Coke'}];
+//const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
 const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
 
 //Populates HTML lists with supplies and their attributes
 const populateList = (supplyArray, supplyType) => {
     supplyArray.forEach(supply => {
         const listItem = document.createElement('li');
-        listItem.innerText = supply;
-        listItem.id = supply;
-        //I want every listItem/supply to have an image, too
+        listItem.innerText = supply.name;
+        listItem.id = supply.name;
         listItem.className = supplyType;
+        const itemImage = document.createElement('img');
+        itemImage.src = supply.image;
+        listItem.appendChild(itemImage);
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
         itemParent.appendChild(listItem);
         listItem.addEventListener('click', () => {
-            newDrink[supplyType] = supply;//assign supply to supplyType in newDrink
-            drink.innerText = `${supply}`;
+            newDrink[supplyType] = supply.name;//assign supply to supplyType in newDrink
+            drink.innerText = `${supply.name}`;
         })
     })
 }
@@ -95,10 +101,12 @@ const serveDrink = () => {
 }
 
 let tipTotal = 0;
-const takeTip = () => {
-    return tipTotal += 1;
-}
 tips.innerText = `Tips: ${tipTotal}`;
+const takeTip = () => {
+    tipTotal += 1;
+    tips.innerText = `Tips: ${tipTotal}`;
+}
+
 
 // add a price value to each drink and write a function that will add it to the tip jar
 

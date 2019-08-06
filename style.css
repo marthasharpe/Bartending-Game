@@ -61,13 +61,3 @@ li {
 .mixer-selection {
     grid-area: 3 / 3 / span 2 / span 1;
 }
-
-#Olive {
-    background-image: url("olives.png");
-    background-size: 4rem 8rem;
-}
-
-#Vodka {
-    background-image: url("Vodka.png");
-    background-size: 4rem 8rem;
-}
