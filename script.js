@@ -20,13 +20,15 @@ const drinkArray = [rumCoke];
 //const drinkArray = [shotRum, shotGin, rumCoke, ginTonic, scotchSoda];
 
 //supplyArray arrays, make into repeatable Arrays object?
+
 const glassArray = [{name: 'Highball'}];
 //const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
 const spiritArray = [{name: 'Rum', image: './images/Rum.png'}];
 //const spiritArray = [{name: 'Vodka', image: './images/Vodka.png'}, 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
-const mixerArray = [{name: 'Coke'}];
+const mixerArray = [{name: 'Coke', image: './images/7Up.png'}];
 //const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
-const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
+const garnishArray = [{name: 'Olive', image: './images/olives.png'}];
+//const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
 
 //Populates HTML lists with supplies and their attributes
 const populateList = (supplyArray, supplyType) => {
@@ -35,7 +37,7 @@ const populateList = (supplyArray, supplyType) => {
         listItem.innerText = supply.name;
         listItem.id = supply.name;
         listItem.className = supplyType;
-        const itemImage = document.createElement('img');
+        const itemImage = new Image(50, 140)//width, height
         itemImage.src = supply.image;
         listItem.appendChild(itemImage);
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
@@ -90,7 +92,7 @@ const takeOrder = () => {
 }
 
 const serveDrink = () => {
-    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer) {
+    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer && newDrink.garnish === drinkOrder.garnish) {
         customer.innerText ="😊"
         wordBubble.innerText = "Thanks! Here's your tip!"
         takeTip();
@@ -108,7 +110,7 @@ const takeTip = () => {
 }
 
 
-// add a price value to each drink and write a function that will add it to the tip jar
+// add a price value to each drink
 
 // "Get Recipe" button that shows the current drink order as a drop-down menu
 
