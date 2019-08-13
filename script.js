@@ -9,23 +9,21 @@ class Drink {
         this.garnish = garnish;
     }
 }
-const shotRum = new Drink('shot of Rum', 'Shot', 'Rum');
-const shotGin = new Drink('shot of Gin', 'Shot', 'Gin');
-const rumCoke = new Drink('Rum and Coke', 'Highball', 'Rum', 'Coke');
+
 const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic');
 const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Soda');
 
 //Array of all drinks
-const drinkArray = [rumCoke];
-//const drinkArray = [shotRum, shotGin, rumCoke, ginTonic, scotchSoda];
+const drinkArray = [ginTonic];
+//const drinkArray = [ginTonic, scotchSoda];
 
 //supplyArray arrays, make into repeatable Arrays object?
 
-const glassArray = [{name: 'Highball'}];
-//const glassArray = ['Shot', 'Rocks', 'Highball', 'Martini'];
-const spiritArray = [{name: 'Rum', image: './images/Rum.png'}];
+const glassArray = [{name: 'Highball', image: './images/Highball.png'}];
+//const glassArray = ['Rocks', 'Highball', 'Martini'];
+const spiritArray = [{name: 'Gin', image: './images/Gin.png'}];
 //const spiritArray = [{name: 'Vodka', image: './images/Vodka.png'}, 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
-const mixerArray = [{name: 'Coke', image: './images/7Up.png'}];
+const mixerArray = [{name: 'Tonic', image: './images/Tonic.png'}];
 //const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
 const garnishArray = [{name: 'Olive', image: './images/olives.png'}];
 //const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
