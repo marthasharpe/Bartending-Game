@@ -10,8 +10,8 @@ class Drink {
     }
 }
 
-const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic');
-const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Soda');
+const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic', 'Wedge');
+const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Soda', 'Wedge');
 
 //Array of all drinks
 const drinkArray = [ginTonic];
@@ -25,8 +25,8 @@ const spiritArray = [{name: 'Gin', image: './images/Gin.png'}];
 //const spiritArray = [{name: 'Vodka', image: './images/Vodka.png'}, 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
 const mixerArray = [{name: 'Tonic', image: './images/Tonic.png'}];
 //const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
-const garnishArray = [{name: 'Olive', image: './images/olives.png'}];
-//const garnishArray = ['Cherry', 'Lemon', 'Lime', 'Olive']
+const garnishArray = [{name: 'Wedge', image: './images/LemonLime.png'}];
+//const garnishArray = ['Cherry', 'Wedge', 'Olive']
 
 //Populates HTML lists with supplies and their attributes
 const populateList = (supplyArray, supplyType) => {
@@ -35,7 +35,7 @@ const populateList = (supplyArray, supplyType) => {
         listItem.innerText = supply.name;
         listItem.id = supply.name;
         listItem.className = supplyType;
-        const itemImage = new Image(50, 140)//width, height
+        const itemImage = new Image()//width, height
         itemImage.src = supply.image;
         listItem.appendChild(itemImage);
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];

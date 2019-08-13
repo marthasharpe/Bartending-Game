@@ -13,6 +13,7 @@ body {
     align-items: center;
     min-width: 400px;
     text-align: center;
+    background-color: rgb(49, 49, 49);
 }
 
 #customers {
@@ -24,6 +25,7 @@ body {
     border: solid black 2px;
     border-radius: 50%;
     padding: 1rem;
+    background-color: white
 }
 
 #new-drink {
@@ -43,20 +45,17 @@ ul {
     flex-flow: row wrap;
     justify-content: center;
     border: solid black 1px;
+    background-color: #616161;
 }
 
 li {
     list-style-type: none;
-    width: 4rem;
-    height: 8rem;
+    width: auto;
+    height: auto;
     margin: 1rem;
-    border: solid black 1px;
     cursor: pointer;
 }
 
-.glass-selection {
-    background-image: url("Glassware.png");
-}
 .spirit-selection {
     grid-area: 3 / 1 / span 2 / span 1;
 }
