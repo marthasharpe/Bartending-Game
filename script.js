@@ -32,10 +32,15 @@ const garnishArray = [{name: 'Wedge', image: './images/LemonLime.png'}];
 const populateList = (supplyArray, supplyType) => {
     supplyArray.forEach(supply => {
         const listItem = document.createElement('li');
-        listItem.innerText = supply.name;
-        listItem.id = supply.name;
-        listItem.className = supplyType;
-        const itemImage = new Image()//width, height
+        listItem.className = supplyType; //eg. "glass"
+        listItem.id = supply.name; //eg. "Highball"
+        //add div to each list item with the name
+        const itemLabel = document.createElement('div');
+        itemLabel.class = "label";
+        itemLabel.innerText = supply.name;
+        listItem.appendChild(itemLabel);
+        //add image to each list item
+        const itemImage = new Image()
         itemImage.src = supply.image;
         listItem.appendChild(itemImage);
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
@@ -68,7 +73,7 @@ const newCustomer = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
-    drink.innerText = "";
+    drink.innerText = ""; //reset drink ingredients list
 };
 newCustomer();
 
