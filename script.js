@@ -68,6 +68,7 @@ const newCustomer = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
+    drink.innerText = "";
 };
 newCustomer();
 
