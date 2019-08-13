@@ -42,7 +42,9 @@ const populateList = (supplyArray, supplyType) => {
         itemParent.appendChild(listItem);
         listItem.addEventListener('click', () => {
             newDrink[supplyType] = supply.name;//assign supply to supplyType in newDrink
-            drink.innerText = `${supply.name}`;
+            const drinkItem = document.createElement('li');
+            drink.appendChild(drinkItem);
+            drinkItem.innerText = supply.name;
         })
     })
 }
@@ -60,7 +62,6 @@ let tips = document.getElementById("tip-jar");
 //initializing variables
 let drinkOrder;
 let newDrink = {}
-
 
 //default value for new customer
 const newCustomer = () => {
