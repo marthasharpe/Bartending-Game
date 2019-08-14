@@ -16,23 +16,64 @@ body {
     background-color: rgb(49, 49, 49);
 }
 
+.recipe-container {
+    display: flex;
+    justify-content: center;
+}
+
+#recipe-button {
+    border: solid black 1px;
+    background-color: #616161;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.drink-recipe {
+    display: none;
+}
+
+.tip-jar-container {
+    display: flex;
+    justify-content: center;
+}
+
 #tip-jar {
     border: solid black 1px;
     background-color: #616161;
     padding: 1rem;
 }
 
-#customers {
+.customer-container {
     grid-area: 2 / 2 / span 1 / span 1;
+    display: flex;
+    justify-content: center;
+}
+
+#customer {
+    font-size: 8rem;
+    cursor: pointer;
+}
+
+.word-bubble-container {
+   grid-area: 1 / 2 / span 1 / span 1;
+   display: flex;
+   justify-content: center;
 }
 
 #word-bubble {
-    grid-area: 1 / 2 / span 1 / span 1;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     width: auto;
     border: solid black 2px;
     border-radius: 50%;
-    padding: 1rem;
+    padding: 1rem 2rem;
     background-color: white;
 }
 
@@ -59,10 +100,6 @@ body {
     width: 60%;
 }
 
-#customer {
-    font-size: 8rem;
-    cursor: pointer;
-}
 
 .glass-selection,
 .garnish-selection,
@@ -114,21 +151,3 @@ body {
     grid-area: 3 / 3 / span 2 / span 1;
 }
 
-#recipe-button {
-    border: solid black 1px;
-    background-color: #616161;
-    padding: 1rem;
-    cursor: pointer;
-}
-
-.show {
-    display: block;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    z-index: 1;
-}
-
-.drink-recipe {
-    display: none;
-}
