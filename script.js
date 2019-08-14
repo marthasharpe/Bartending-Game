@@ -1,25 +1,28 @@
 // Drink menu
-
 class Drink {
-    constructor(name, glass, spirit, mixer, garnish, price) {
+    constructor(name, glass, ingredients, garnish, price) {
         this.name = name;
         this.glass = glass;
-        this.spirit = spirit;
-        this.mixer = mixer;
+        this.ingredients = ingredients;
+        // this.spirit = spirit;
+        // this.mixer = mixer;
         this.garnish = garnish;
         this.price = price;
     }
 }
 
-const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic', 'Citrus Wedge', );
-const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Club Soda', 'Citrus Wedge', 4);
-const whiskeySour = new Drink('Whiskey Sour', 'Highball', 'Bourbon', 'Sour Mix', 'Citrus Wedge', 4);
+const ginTonic = new Drink('Gin and Tonic', 'Highball', ['Gin', 'Tonic'], 'Citrus Wedge', 4);
+console.log(ginTonic);
+// const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Club Soda', 'Citrus Wedge', 4);
+// const whiskeySour = new Drink('Whiskey Sour', 'Highball', 'Bourbon', 'Sour Mix', 'Citrus Wedge', 4);
+//const ginMartini = new Drink('Gin Martini', 'Cocktail', ['Gin', 'Vermouth'], 'Olive', 8);
+
 //Array of all drinks
-const drinkArray = [ginTonic, scotchSoda, whiskeySour];
+const drinkArray = [ginTonic];
 
 //supplyArray arrays
 const glassArray = [
-    {name: 'Old Fashioned', image: './images/OldFashioned.png'},
+    {name: 'Old-Fashioned', image: './images/OldFashioned.png'},
     {name: 'Highball', image: './images/Highball.png'},
     {name: 'Cocktail', image: './images/Cocktail.png'},
 ];
@@ -30,19 +33,29 @@ const spiritArray = [
     {name: 'Bourbon', image: './images/Bourbon.png'},
     {name: 'Rum', image: './images/Rum.png'},
     {name: 'Tequila', image: './images/Tequila.png'},
+    {name: 'Triplesec', image: './images/Triple Sec.png'},
+    {name: 'Vermouth', image: './images/Vermouth.png'},
 ];
-//const spiritArray = ['Rum', 'Tequila', 'Triplesec', 'Vermouth'];
 const mixerArray = [
     {name: 'Tonic', image: './images/Tonic.png'},
     {name: 'Club Soda', image: './images/Club Soda.png'},
     {name: '7Up', image: './images/7Up.png'},
+    {name: 'Coke', image: './images/7Up.png'},
     {name: 'Sour Mix', image: './images/Pineapple or Sour.png'},
+    {name: 'Orange', image: './images/Orange.png'},
+    {name: 'Pineapple', image: './images/Pineapple or Sour.png'},
+    {name: 'Cranberry', image: './images/Cranberry.png'},    
 ];
-//const mixerArray = ['Coke', 'Pineapple', 'Orange', 'Cranberry'];
 const garnishArray = [
+    {name: 'Olive', image: './images/olives.png'},
     {name: 'Citrus Wedge', image: './images/LemonLime.png'},
+    {name: 'Cherry', image: './images/olives.png'},    
 ];
-//const garnishArray = ['Cherry', 'Wedge', 'Olive']
+
+//initializing variables
+let drinkOrder;
+let newDrink = {}
+let ingredientsArray = [];
 
 //Populates HTML lists with supplies and their attributes
 const populateList = (supplyArray, supplyType) => {
@@ -52,7 +65,7 @@ const populateList = (supplyArray, supplyType) => {
         listItem.id = supply.name; //eg. "Highball"
 
         //add image to each list item
-        const itemImage = new Image()
+        const itemImage = new Image();
         itemImage.src = supply.image;
         listItem.appendChild(itemImage);
         
@@ -65,7 +78,12 @@ const populateList = (supplyArray, supplyType) => {
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
         itemParent.appendChild(listItem);
         listItem.addEventListener('click', () => {
-            newDrink[supplyType] = supply.name;//assign supply to supplyType in newDrink
+            if (supplyType === 'spirit' || supplyType === 'mixer') {
+                ingredientsArray.push(supply.name);
+            } else {
+                newDrink[supplyType] = supply.name;
+            }
+            //display supplies added in new drink
             const drinkItem = document.createElement('li');
             drink.appendChild(drinkItem);
             drinkItem.innerText = supply.name;
@@ -89,10 +107,6 @@ recipeButton.addEventListener('click', () => {
     drinkRecipe.classList.toggle("drink-recipe");
     drinkRecipe.classList.toggle("show-recipe");
 })
-
-//initializing variables
-let drinkOrder;
-let newDrink = {}
 
 //default value for new customer
 const newCustomer = () => {
@@ -129,6 +143,9 @@ const takeOrder = () => {
 }
 
 const serveDrink = () => {
+    console.log(newDrink);
+    console.log(ingredientsArray);
+    newDrink.ingredients = ingredientsArray;
     if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer && newDrink.garnish === drinkOrder.garnish) {
         customer.innerText ="😊"
         wordBubble.innerText = "Thanks! Here's your tip!"
@@ -150,7 +167,8 @@ const takeTip = () => {
     tipJar.innerText = `Tips: ${tipTotal}`;
 }
 
-
-// add a price value to each drink
-
-// "Get Recipe" button that shows the current drink order as a drop-down menu
+/*New problem: drinks that have multiple mixers or multiple spirits instead of one of each.
+A nested ingredients array in the Drink constructor.
+Instead of this.spirit and this.mixer, it would be this.ingredients = [];
+Then I would need to .push() each clicked ingredient into the array
+Then loop through the ingredients in drinkOrder and newDrink to make sure they're the same.*/

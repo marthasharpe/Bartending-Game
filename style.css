@@ -6,9 +6,10 @@
 
 body {
     display: grid;
-    grid-template-rows: 6rem 12rem 12rem 12rem;
+    grid-template-rows: 1fr 2fr 2fr 2fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1rem;
+    margin: 1rem;
     justify-content: center;
     align-items: center;
     min-width: 400px;
@@ -122,12 +123,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 20rem;
     list-style-type: none;
     background-color: #616161;
     border-radius: 1rem;
     height: 80%;
-    width: 60%;
+    width: 80%;
     font-size: 1.4rem;
     padding: 1rem 2rem;
     line-height: 2.5rem;
@@ -142,6 +142,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: baseline;
     border-radius: 1rem;
     background-color: #616161;
     height: 100%;
@@ -155,10 +156,15 @@ body {
     margin: 0.5rem;
 }
 
+#Old-Fashioned img {
+    height: 40%;
+}
+
 .glass img,
 .garnish img {
-    height: 50%;
+    height: 60%;
 }
+
 .spirit img,
 .mixer img {
     height: 90%;
@@ -180,11 +186,11 @@ body {
     color: white;
 }
 
-.spirit-selection {
+.spirits-container {
     grid-area: 3 / 1 / span 2 / span 1;
 }
 
-.mixer-selection {
+.mixers-container {
     grid-area: 3 / 3 / span 2 / span 1;
 }
 
