@@ -59,11 +59,11 @@ populateList(mixerArray, 'mixer');
 populateList(garnishArray, 'garnish');
 
 //Elements and event listeners
-const wordBubble = document.getElementById("word-bubble");
-const customer = document.getElementById("customer");
-let drink = document.getElementById("new-drink");
-let tipJar = document.getElementById("tip-jar");
-let recipeButton = document.getElementById("recipe-button");
+const wordBubble = document.getElementsByClassName("word-bubble")[0];
+const customer = document.getElementsByClassName("customer")[0];
+let drink = document.getElementsByClassName("new-drink")[0];
+let tipJar = document.getElementsByClassName("tip-jar")[0];
+let recipeButton = document.getElementsByClassName("recipe-button")[0];
 let drinkRecipe = document.getElementsByClassName("drink-recipe")[0];
 
 recipeButton.addEventListener('click', () => {
@@ -80,7 +80,7 @@ const newCustomer = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
-    drinkRecipe.innerText = drinkOrder;
+    drinkRecipe.innerText = drinkOrder.name;
     drink.innerText = ""; //reset drink ingredients list
 };
 newCustomer();

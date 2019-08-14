@@ -18,11 +18,13 @@ body {
 
 .recipe-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-#recipe-button {
-    border: solid black 1px;
+.recipe-button {
     background-color: #616161;
     padding: 1rem;
     cursor: pointer;
@@ -31,6 +33,7 @@ body {
 .show {
     display: block;
     position: absolute;
+    top: 3rem;
     background-color: #f1f1f1;
     min-width: 160px;
     z-index: 1;
@@ -45,8 +48,7 @@ body {
     justify-content: center;
 }
 
-#tip-jar {
-    border: solid black 1px;
+.tip-jar {
     background-color: #616161;
     padding: 1rem;
 }
@@ -57,7 +59,7 @@ body {
     justify-content: center;
 }
 
-#customer {
+.customer {
     font-size: 8rem;
     cursor: pointer;
 }
@@ -68,10 +70,9 @@ body {
    justify-content: center;
 }
 
-#word-bubble {
+.word-bubble {
     font-size: 1.4rem;
     width: auto;
-    border: solid black 2px;
     border-radius: 50%;
     padding: 1rem 2rem;
     background-color: white;
@@ -86,12 +87,11 @@ body {
     height: 100%;
 }
 
-#new-drink {
+.new-drink {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid black 1px;
     height: 20rem;
     list-style-type: none;
     background-color: #616161;
@@ -108,7 +108,6 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    border: solid black 1px;
     border-radius: 1rem;
     background-color: #616161;
     height: 100%;
