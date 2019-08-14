@@ -1,31 +1,47 @@
 // Drink menu
 
 class Drink {
-    constructor(name, glass, spirit, mixer, garnish) {
+    constructor(name, glass, spirit, mixer, garnish, price) {
         this.name = name;
         this.glass = glass;
         this.spirit = spirit;
         this.mixer = mixer;
         this.garnish = garnish;
+        this.price = price;
     }
 }
 
-const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic', 'Wedge');
-const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Soda', 'Wedge');
-
+const ginTonic =new Drink('Gin and Tonic', 'Highball', 'Gin', 'Tonic', 'Citrus Wedge', );
+const scotchSoda = new Drink('Scotch and Soda', 'Highball', 'Scotch', 'Club Soda', 'Citrus Wedge', 4);
+const whiskeySour = new Drink('Whiskey Sour', 'Highball', 'Bourbon', 'Sour Mix', 'Citrus Wedge', 4);
 //Array of all drinks
-const drinkArray = [ginTonic];
-//const drinkArray = [ginTonic, scotchSoda];
+const drinkArray = [ginTonic, scotchSoda, whiskeySour];
 
-//supplyArray arrays, make into repeatable Arrays object?
-
-const glassArray = [{name: 'Highball', image: './images/Highball.png'}];
-//const glassArray = ['Rocks', 'Highball', 'Martini'];
-const spiritArray = [{name: 'Gin', image: './images/Gin.png'}];
-//const spiritArray = [{name: 'Vodka', image: './images/Vodka.png'}, 'Bourbon', 'Scotch', 'Gin', 'Rum', 'Tequila', 'Triplesec', 'Vermouth'];
-const mixerArray = [{name: 'Tonic', image: './images/Tonic.png'}];
-//const mixerArray = ['Coke', '7Up', 'Soda', 'Tonic', 'Sour', 'Pineapple', 'Orange', 'Cranberry'];
-const garnishArray = [{name: 'Wedge', image: './images/LemonLime.png'}];
+//supplyArray arrays
+const glassArray = [
+    {name: 'Old Fashioned', image: './images/OldFashioned.png'},
+    {name: 'Highball', image: './images/Highball.png'},
+    {name: 'Cocktail', image: './images/Cocktail.png'},
+];
+const spiritArray = [
+    {name: 'Vodka', image: './images/Vodka.png'},
+    {name: 'Gin', image: './images/Gin.png'},
+    {name: 'Scotch', image: './images/Scotch.png'},
+    {name: 'Bourbon', image: './images/Bourbon.png'},
+    {name: 'Rum', image: './images/Rum.png'},
+    {name: 'Tequila', image: './images/Tequila.png'},
+];
+//const spiritArray = ['Rum', 'Tequila', 'Triplesec', 'Vermouth'];
+const mixerArray = [
+    {name: 'Tonic', image: './images/Tonic.png'},
+    {name: 'Club Soda', image: './images/Club Soda.png'},
+    {name: '7Up', image: './images/7Up.png'},
+    {name: 'Sour Mix', image: './images/Pineapple or Sour.png'},
+];
+//const mixerArray = ['Coke', 'Pineapple', 'Orange', 'Cranberry'];
+const garnishArray = [
+    {name: 'Citrus Wedge', image: './images/LemonLime.png'},
+];
 //const garnishArray = ['Cherry', 'Wedge', 'Olive']
 
 //Populates HTML lists with supplies and their attributes
@@ -34,15 +50,18 @@ const populateList = (supplyArray, supplyType) => {
         const listItem = document.createElement('li');
         listItem.className = supplyType; //eg. "glass"
         listItem.id = supply.name; //eg. "Highball"
+
+        //add image to each list item
+        const itemImage = new Image()
+        itemImage.src = supply.image;
+        listItem.appendChild(itemImage);
+        
         //add div to each list item with the name
         const itemLabel = document.createElement('div');
         itemLabel.class = "label";
         itemLabel.innerText = supply.name;
         listItem.appendChild(itemLabel);
-        //add image to each list item
-        const itemImage = new Image()
-        itemImage.src = supply.image;
-        listItem.appendChild(itemImage);
+
         const itemParent = document.getElementsByClassName(`${supplyType}-selection`)[0];
         itemParent.appendChild(listItem);
         listItem.addEventListener('click', () => {
@@ -84,7 +103,8 @@ const newCustomer = () => {
         `Glass - ${drinkOrder.glass}
         Spirit - ${drinkOrder.spirit}
         Mixer - ${drinkOrder.mixer}
-        Garnish - ${drinkOrder.garnish}`;
+        Garnish - ${drinkOrder.garnish}
+        Price - $${JSON.stringify(drinkOrder.price)}`;
     drink.innerText = ""; //reset drink ingredients list
 };
 newCustomer();
@@ -122,7 +142,11 @@ const serveDrink = () => {
 let tipTotal = 0;
 tipJar.innerText = `Tips: ${tipTotal}`;
 const takeTip = () => {
-    tipTotal += 1;
+    if (drinkOrder.price === 4) {
+        tipTotal += 1;    
+    } else {
+        tipTotal += 2;
+    }
     tipJar.innerText = `Tips: ${tipTotal}`;
 }
 

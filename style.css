@@ -152,17 +152,16 @@ body {
 .garnish div,
 .spirit div,
 .mixer div {
-    position: absolute;
+    margin: 0.5rem;
 }
 
-.glass img{
-    height: 70%;
+.glass img,
+.garnish img {
+    height: 50%;
 }
-
-.garnish img,
 .spirit img,
 .mixer img {
-    height: 50%;
+    height: 90%;
 }
 
 .glass,
@@ -170,13 +169,15 @@ body {
 .spirit,
 .mixer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     list-style-type: none;
     width: auto;
-    height: auto;
+    height: 8rem;
     margin: 1rem;
     cursor: pointer;
+    color: white;
 }
 
 .spirit-selection {
