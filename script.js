@@ -68,7 +68,7 @@ let drinkRecipe = document.getElementsByClassName("drink-recipe")[0];
 
 recipeButton.addEventListener('click', () => {
     drinkRecipe.classList.toggle("drink-recipe");
-    drinkRecipe.classList.toggle("show");
+    drinkRecipe.classList.toggle("show-recipe");
 })
 
 //initializing variables
@@ -80,7 +80,11 @@ const newCustomer = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
-    drinkRecipe.innerText = drinkOrder.name;
+    drinkRecipe.innerText =
+        `Glass - ${drinkOrder.glass}
+        Spirit - ${drinkOrder.spirit}
+        Mixer - ${drinkOrder.mixer}
+        Garnish - ${drinkOrder.garnish}`;
     drink.innerText = ""; //reset drink ingredients list
 };
 newCustomer();

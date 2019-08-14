@@ -14,6 +14,7 @@ body {
     min-width: 400px;
     text-align: center;
     background-color: rgb(49, 49, 49);
+    font-family: "Trebuchet MS", sans-serif;
 }
 
 .recipe-container {
@@ -26,17 +27,26 @@ body {
 
 .recipe-button {
     background-color: #616161;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
     cursor: pointer;
+    border-radius: 1rem;
 }
 
-.show {
+.show-recipe {
     display: block;
     position: absolute;
     top: 3rem;
     background-color: #f1f1f1;
     min-width: 160px;
     z-index: 1;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    line-height: 2.5rem;
+    color: white;
+    background-color: rgb(49, 49, 49);
+    border: solid 4px #616161;
 }
 
 .drink-recipe {
@@ -50,7 +60,10 @@ body {
 
 .tip-jar {
     background-color: #616161;
-    padding: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 1rem;
 }
 
 .customer-container {
@@ -60,7 +73,7 @@ body {
 }
 
 .customer {
-    font-size: 8rem;
+    font-size: 10rem;
     cursor: pointer;
 }
 
@@ -74,8 +87,25 @@ body {
     font-size: 1.4rem;
     width: auto;
     border-radius: 50%;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     background-color: white;
+    position: relative;
+    color: rgb(49, 49, 49);
+    font-family: "Marker Felt", fantasy;
+}
+
+.word-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: white;
+	border-bottom: 0;
+	margin-left: -20px;
+	margin-bottom: -20px;
 }
 
 .new-drink-container {
@@ -98,6 +128,10 @@ body {
     border-radius: 1rem;
     height: 80%;
     width: 60%;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    line-height: 2.5rem;
+    color: white;
 }
 
 
@@ -121,7 +155,10 @@ body {
     position: absolute;
 }
 
-.glass img,
+.glass img{
+    height: 70%;
+}
+
 .garnish img,
 .spirit img,
 .mixer img {
