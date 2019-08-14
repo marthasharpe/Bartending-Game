@@ -62,7 +62,14 @@ populateList(garnishArray, 'garnish');
 const wordBubble = document.getElementById("word-bubble");
 const customer = document.getElementById("customer");
 let drink = document.getElementById("new-drink");
-let tips = document.getElementById("tip-jar");
+let tipJar = document.getElementById("tip-jar");
+let recipeButton = document.getElementById("recipe-button");
+let drinkRecipe = document.getElementsByClassName("drink-recipe")[0];
+
+recipeButton.addEventListener('click', () => {
+    drinkRecipe.classList.toggle("drink-recipe");
+    drinkRecipe.classList.toggle("show");
+})
 
 //initializing variables
 let drinkOrder;
@@ -73,6 +80,7 @@ const newCustomer = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
     customer.innerText = "🙂"
     wordBubble.innerText = "Hi. I'm a new customer."
+    drinkRecipe.innerText = drinkOrder;
     drink.innerText = ""; //reset drink ingredients list
 };
 newCustomer();
@@ -108,15 +116,13 @@ const serveDrink = () => {
 }
 
 let tipTotal = 0;
-tips.innerText = `Tips: ${tipTotal}`;
+tipJar.innerText = `Tips: ${tipTotal}`;
 const takeTip = () => {
     tipTotal += 1;
-    tips.innerText = `Tips: ${tipTotal}`;
+    tipJar.innerText = `Tips: ${tipTotal}`;
 }
 
 
 // add a price value to each drink
 
 // "Get Recipe" button that shows the current drink order as a drop-down menu
-
-// display what the user adds to newDrink
