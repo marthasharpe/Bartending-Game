@@ -115,8 +115,7 @@ const newCustomer = () => {
     wordBubble.innerText = "Hi. I'm a new customer."
     drinkRecipe.innerText =
         `Glass - ${drinkOrder.glass}
-        Spirit - ${drinkOrder.spirit}
-        Mixer - ${drinkOrder.mixer}
+        Ingredients - ${drinkOrder.ingredients}
         Garnish - ${drinkOrder.garnish}
         Price - $${JSON.stringify(drinkOrder.price)}`;
     drink.innerText = ""; //reset drink ingredients list
@@ -140,13 +139,27 @@ customer.addEventListener("click", () => {
 const takeOrder = () => {
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
     newDrink = {}
+    ingredientsArray = [];
+}
+
+const checkIngredients = (arr1, arr2) => {
+    if (arr1.length !== arr2.length) {
+        return false;
+    }
+    for (let i=0; i<arr1.length; i++) {
+        if (!arr2.includes(arr1[i])) {
+            return false;
+        }
+    }
+    return true;
 }
 
 const serveDrink = () => {
+    //newDrink.ingredients = ingredientsArray;
     console.log(newDrink);
     console.log(ingredientsArray);
-    newDrink.ingredients = ingredientsArray;
-    if (newDrink.glass === drinkOrder.glass && newDrink.spirit === drinkOrder.spirit && newDrink.mixer === drinkOrder.mixer && newDrink.garnish === drinkOrder.garnish) {
+    let isMatch = checkIngredients(drinkOrder.ingredients, ingredientsArray);
+    if (isMatch && newDrink.glass === drinkOrder.glass && newDrink.garnish === drinkOrder.garnish) {
         customer.innerText ="😊"
         wordBubble.innerText = "Thanks! Here's your tip!"
         takeTip();
