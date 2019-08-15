@@ -124,7 +124,7 @@ recipeButton.addEventListener('click', () => {
 const newCustomer = () => {
     customer.innerText = "🤔"
 };
-newCustomer();
+setTimeout(newCustomer, 1000);
 
 //Clear newDrink ingredients to start over
 const clearDrink = () => {
@@ -143,8 +143,12 @@ customer.addEventListener("click", () => {
     } else if (customer.innerText === "🙂" || customer.innerText === "😠") {
         serveDrink();
     } else if (customer.innerText === "😋") {
+        customer.innerText = "💰";
+    } else if (customer.innerText === "💰") {
+        customer.innerText = "";
         takeTip();
         clearDrink(); //reset drink ingredients list
+        setTimeout(newCustomer, 1000);
     }
 });
 
