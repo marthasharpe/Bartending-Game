@@ -116,6 +116,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .new-drink {
@@ -134,6 +135,17 @@ body {
     color: white;
 }
 
+.new-drink-button {
+    position: absolute;
+    color: white;
+    background-color: rgb(49, 49, 49);
+    border: solid #616161 4px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    left: 3.5rem;
+    bottom: 1.5rem;
+    cursor: pointer;
+}
 
 .glass-selection,
 .garnish-selection,

@@ -1,30 +1,34 @@
 // Drink menu
 class Drink {
-    constructor(name, glass, ingredients, garnish, price) {
+    constructor(name, glass, ingredients, price, garnish) {
         this.name = name;
         this.glass = glass;
         this.ingredients = ingredients;
-        // this.spirit = spirit;
-        // this.mixer = mixer;
         this.garnish = garnish;
         this.price = price;
     }
 }
 
-const ginTonic = new Drink('Gin and Tonic', 'Highball', ['Gin', 'Tonic'], 'Lime', 4);
-const scotchSoda = new Drink('Scotch and Soda', 'Highball', ['Scotch', 'Club Soda'], 'Lemon', 4);
-const rumCoke = new Drink('Rum and Coke', 'Highball', ['Rum', 'Coke'], 'Cherry', 4);
-const capeCod = new Drink('Cape Cod', 'Highball', ['Vodka', 'Cranberry'], 'Lime', 4);
-const screwdriver = new Drink('Screwdriver', 'Highball', ['Vodka', 'O.J.'], 'Orange', 4);
-const whiskeySour = new Drink('Whiskey Sour', 'Highball', ['Bourbon', 'Sour Mix'], 'Cherry', 4);
-const ginMartini = new Drink('Gin Martini', 'Cocktail', ['Gin', 'Vermouth'], 'Olive', 8);
-const manhattan = new Drink('Manhattan', 'Cocktail', ['Bourbon', 'Vermouth'], 'Cherry', 8);
-const longIsland = new Drink('Long Island Iced Tea', 'Highball', ['Vodka', 'Rum', 'Gin', 'Tequila', 'Triplesec', 'Coke', 'Sour Mix'], 'Lemon', 8);
+const scotchRocks = new Drink('Scotch on the Rocks', 'Old-Fashioned', ['Scotch'], 8);
+const bourbonRocks = new Drink('Bourbon on the Rocks', 'Old-Fashioned', ['Bourbon'], 8);
+const ginTonic = new Drink('Gin and Tonic', 'Highball', ['Gin', 'Tonic'], 4, 'Lime');
+const scotchSoda = new Drink('Scotch and Soda', 'Highball', ['Scotch', 'Club Soda'], 4, 'Lemon');
+const rumCoke = new Drink('Rum and Coke', 'Highball', ['Rum', 'Coke'], 4, 'Cherry');
+const capeCod = new Drink('Cape Cod', 'Highball', ['Vodka', 'Cranberry'], 4, 'Lime');
+const screwdriver = new Drink('Screwdriver', 'Highball', ['Vodka', 'O.J.'], 4, 'Orange');
+const tequilaSunrise = new Drink('Tequila Sunrise', 'Highball', ['Tequila', 'O.J.'], 4, 'Cherry');
+const whiskeySour = new Drink('Whiskey Sour', 'Highball', ['Bourbon', 'Sour Mix'], 4, 'Cherry');
+const longIsland = new Drink('Long Island Iced Tea', 'Highball', ['Vodka', 'Rum', 'Gin', 'Tequila', 'Triplesec', 'Coke', 'Sour Mix'], 8, 'Lemon');
+const ginMartini = new Drink('Gin Martini', 'Cocktail', ['Gin', 'Vermouth'], 8, 'Olive');
+const ginMartiniRocks = new Drink('Gin Martini', 'Old-Fashioned', ['Gin', 'Vermouth'], 8, 'Olive');
+const manhattan = new Drink('Manhattan', 'Cocktail', ['Bourbon', 'Vermouth'], 8, 'Cherry');
+const cosmopolitan = new Drink('Cosmopolitan', 'Cocktail', ['Vodka', 'Triplesec', 'Cranberry', 'Sour Mix'], 8, 'Lemon');
+const margarita = new Drink('Margarita', 'Cocktail', ['Tequila', 'Triplesec', 'Sour Mix'], 8,'Lime');
 
-//Array of all drinks
-const drinkArray = [ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manhattan, capeCod, screwdriver, longIsland];
+//Array of possible drinks
+const drinkArray = [ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manhattan, capeCod, screwdriver, tequilaSunrise, longIsland, cosmopolitan, margarita, scotchRocks, bourbonRocks, ginMartiniRocks];
 
-//supplyArray arrays
+//arrays of supplies
 const glassArray = [
     {name: 'Old-Fashioned', image: './images/OldFashioned.png'},
     {name: 'Highball', image: './images/Highball.png'},
@@ -63,7 +67,7 @@ let drinkOrder;
 let newDrink = {}
 let ingredientsArray = [];
 
-//Populates HTML lists with supplies and their attributes
+//Populate HTML lists with supplies and their attributes
 const populateList = (supplyArray, supplyType) => {
     supplyArray.forEach(supply => {
         const listItem = document.createElement('li');
@@ -75,7 +79,7 @@ const populateList = (supplyArray, supplyType) => {
         itemImage.src = supply.image;
         listItem.appendChild(itemImage);
         
-        //add div to each list item with the name
+        //add label to each list item
         const itemLabel = document.createElement('div');
         itemLabel.class = "label";
         itemLabel.innerText = supply.name;
@@ -108,19 +112,22 @@ let drink = document.getElementsByClassName("new-drink")[0];
 let tipJar = document.getElementsByClassName("tip-jar")[0];
 let recipeButton = document.getElementsByClassName("recipe-button")[0];
 let drinkRecipe = document.getElementsByClassName("drink-recipe")[0];
+let newDrinkButton = document.getElementsByClassName("new-drink-button")[0];
+
+//Clear newDrink ingredients to start over
+const clearDrink = () => {
+    newDrink = {};
+    ingredientsArray = [];
+    drink.innerText = "";
+}
+
+newDrinkButton.addEventListener('click', clearDrink);
 
 //dropdown menu
 recipeButton.addEventListener('click', () => {
     drinkRecipe.classList.toggle("drink-recipe");
     drinkRecipe.classList.toggle("show-recipe");
 })
-
-//clicking outside the menu closes the menu
-window.onclick = (event) => {
-    if (!event.target.matches('.recipe-button') && drinkRecipe.classList.contains('show-recipe')) {
-        drinkRecipe.classList.remove('show-recipe');
-    }
-}
 
 //default value for new customer
 const newCustomer = () => {
@@ -130,10 +137,10 @@ const newCustomer = () => {
     drinkRecipe.innerText =
     `Price: $${JSON.stringify(drinkOrder.price)}
         ${drinkOrder.glass} glass
-        ${drinkOrder.garnish} garnish
         INGREDIENTS:
-        ${drinkOrder.ingredients}`;
-    drink.innerText = ""; //reset drink ingredients list
+        ${drinkOrder.ingredients}
+        ${drinkOrder.garnish ? drinkOrder.garnish : ''}`;
+    clearDrink(); //reset drink ingredients list
 };
 newCustomer();
 
@@ -153,8 +160,6 @@ customer.addEventListener("click", () => {
 
 const takeOrder = () => {
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
-    newDrink = {}
-    ingredientsArray = [];
 }
 
 const checkIngredients = (arr1, arr2) => {
@@ -170,8 +175,6 @@ const checkIngredients = (arr1, arr2) => {
 }
 
 const serveDrink = () => {
-    console.log(newDrink);
-    console.log(ingredientsArray);
     let isMatch = checkIngredients(drinkOrder.ingredients, ingredientsArray);
     if (isMatch && newDrink.glass === drinkOrder.glass && newDrink.garnish === drinkOrder.garnish) {
         customer.innerText ="😊"
@@ -193,9 +196,3 @@ const takeTip = () => {
     }
     tipJar.innerText = `Tips: $${tipTotal}`;
 }
-
-/*New problem: drinks that have multiple mixers or multiple spirits instead of one of each.
-A nested ingredients array in the Drink constructor.
-Instead of this.spirit and this.mixer, it would be this.ingredients = [];
-Then I would need to .push() each clicked ingredient into the array
-Then loop through the ingredients in drinkOrder and newDrink to make sure they're the same.*/
