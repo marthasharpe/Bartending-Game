@@ -3,27 +3,44 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
+    background-color: rgb(49, 49, 49);
+}
+
+.main {
     display: grid;
-    grid-template-rows: 1fr 2fr 2fr 2fr;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1rem;
-    margin: 1rem;
     justify-content: center;
     align-items: center;
-    min-width: 400px;
+    min-width: 768px;
     text-align: center;
     background-color: rgb(49, 49, 49);
     font-family: "Trebuchet MS", sans-serif;
 }
 
+.left,
+.center,
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tip-jar-container,
 .recipe-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+.tip-jar {
+    background-color: #616161;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    color: white;
+    border-radius: 1rem;
 }
 
 .recipe-button {
@@ -54,48 +71,39 @@ body {
     display: none;
 }
 
-.tip-jar-container {
+.word-bubble-container {
     display: flex;
     justify-content: center;
-}
-
-.tip-jar {
-    background-color: #616161;
-    padding: 1rem 2rem;
-    font-size: 1.4rem;
-    color: white;
-    border-radius: 1rem;
 }
 
 .customer-container {
-    grid-area: 2 / 2 / span 1 / span 1;
     display: flex;
     justify-content: center;
+    height: fit-content;
 }
 
 .customer {
     font-size: 10rem;
     cursor: pointer;
+    margin: 1rem;
 }
 
-.word-bubble-container {
-   grid-area: 1 / 2 / span 1 / span 1;
-   display: flex;
-   justify-content: center;
-}
-
-.word-bubble {
+.show-bubble {
     font-size: 1.4rem;
     width: auto;
+    height: fit-content;
     border-radius: 50%;
     padding: 1.5rem 2rem;
+    margin: 1rem;
     background-color: white;
     position: relative;
     color: rgb(49, 49, 49);
     font-family: "Marker Felt", fantasy;
+    display: flex;
+    align-items: center;
 }
 
-.word-bubble:after {
+.show-bubble:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -109,13 +117,14 @@ body {
 	margin-bottom: -20px;
 }
 
+.word-bubble {
+    display: none;
+}
+
 .new-drink-container {
-    grid-area: 3 / 2 / span 2 / span 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     position: relative;
 }
 
@@ -133,6 +142,8 @@ body {
     padding: 1rem 2rem;
     line-height: 2.5rem;
     color: white;
+    min-width: 250px;
+    min-height: 250px;
 }
 
 .new-drink-button {
@@ -143,7 +154,7 @@ body {
     padding: 0.5rem;
     border-radius: 0.5rem;
     left: 3.5rem;
-    bottom: 1.5rem;
+    bottom: 2rem;
     cursor: pointer;
 }
 
@@ -158,8 +169,8 @@ body {
     border-radius: 1rem;
     background-color: #616161;
     padding-top: 1rem;
-    height: 100%;
-    width: 100%;
+    min-width: 460px;
+    margin: 1rem;
 }
 
 .glass div,
@@ -197,13 +208,5 @@ body {
     margin: 1rem;
     cursor: pointer;
     color: white;
-}
-
-.spirits-container {
-    grid-area: 3 / 1 / span 2 / span 1;
-}
-
-.mixers-container {
-    grid-area: 3 / 3 / span 2 / span 1;
 }
 

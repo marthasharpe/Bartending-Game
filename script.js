@@ -132,7 +132,6 @@ const clearDrink = () => {
     ingredientsArray = [];
     drink.innerText = "";
 }
-
 newDrinkButton.addEventListener('click', clearDrink);
 
 // first click takes order, second click serves drink, third click new customer
@@ -143,25 +142,32 @@ customer.addEventListener("click", () => {
     } else if (customer.innerText === "🙂" || customer.innerText === "😠") {
         serveDrink();
     } else if (customer.innerText === "😋") {
+        wordBubble.classList.toggle("show-bubble");
+        wordBubble.classList.toggle("word-bubble");
+        clearDrink();
         customer.innerText = "💰";
     } else if (customer.innerText === "💰") {
-        customer.innerText = "";
+        customer.innerText = ""
         takeTip();
-        clearDrink(); //reset drink ingredients list
-        setTimeout(newCustomer, 1000);
+        setTimeout(newCustomer, 1500);
     }
 });
 
 const takeOrder = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
+    wordBubble.classList.toggle("word-bubble");
+    wordBubble.classList.toggle("show-bubble");
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
     customer.innerText = "🙂"
     drinkRecipe.innerText =
-    `Price: $${JSON.stringify(drinkOrder.price)}
-        ${drinkOrder.glass} glass
-        INGREDIENTS:
+        `--------NAME--------
+        ${drinkOrder.name}
+        --------GLASS--------
+        ${drinkOrder.glass}
+        -----INGREDIENTS-----
         ${drinkOrder.ingredients}
-        ${drinkOrder.garnish ? drinkOrder.garnish : ''}`;
+        -------GARNISH-------
+        ${drinkOrder.garnish ? drinkOrder.garnish : 'none'}`;
 }
 
 const checkIngredients = (arr1, arr2) => {
@@ -198,7 +204,6 @@ const takeTip = () => {
     tipJar.innerText = `Tips: $${tipTotal}`;
 }
 
-//Use flexbox instead of grid or just fix sizing (fix sizing)
-//face appears with no word bubble
-//customer clicks not dependent on count but on state
-//click face to take order
+//get rid of recipe when clicked outside
+//get face to be in fixed position
+//start over button in fixed position, too
