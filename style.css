@@ -32,7 +32,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .tip-jar {
@@ -41,6 +40,7 @@ body {
     font-size: 1.4rem;
     color: white;
     border-radius: 1rem;
+    margin: 1rem;
 }
 
 .recipe-button {
@@ -50,14 +50,17 @@ body {
     color: white;
     cursor: pointer;
     border-radius: 1rem;
+    margin: 1rem;
+    position: relative;
 }
 
 .show-recipe {
     display: block;
     position: absolute;
-    top: 3rem;
+    top: 4rem;
     background-color: #f1f1f1;
     min-width: 160px;
+    max-width: 360px;
     z-index: 1;
     font-size: 1.4rem;
     padding: 1rem 2rem;
@@ -74,12 +77,13 @@ body {
 .word-bubble-container {
     display: flex;
     justify-content: center;
+    height: 110px;
 }
 
 .customer-container {
     display: flex;
     justify-content: center;
-    height: fit-content;
+    height: 240px;
 }
 
 .customer {
@@ -153,8 +157,7 @@ body {
     border: solid #616161 4px;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    left: 3.5rem;
-    bottom: 2rem;
+    bottom: -1.5rem;
     cursor: pointer;
 }
 

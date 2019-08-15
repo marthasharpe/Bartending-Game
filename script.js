@@ -114,13 +114,16 @@ let recipeButton = document.getElementsByClassName("recipe-button")[0];
 let drinkRecipe = document.getElementsByClassName("drink-recipe")[0];
 let newDrinkButton = document.getElementsByClassName("new-drink-button")[0];
 
+drinkRecipe.innerText = `1) Click customer to take order.
+2) Add ingredients.
+3) Click customer to serve drink.`
 //dropdown menu
 recipeButton.addEventListener('click', () => {
     drinkRecipe.classList.toggle("drink-recipe");
     drinkRecipe.classList.toggle("show-recipe");
 })
 
-//default value for new customer
+    //default value for new customer
 const newCustomer = () => {
     customer.innerText = "🤔"
 };
