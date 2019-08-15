@@ -114,6 +114,18 @@ let recipeButton = document.getElementsByClassName("recipe-button")[0];
 let drinkRecipe = document.getElementsByClassName("drink-recipe")[0];
 let newDrinkButton = document.getElementsByClassName("new-drink-button")[0];
 
+//dropdown menu
+recipeButton.addEventListener('click', () => {
+    drinkRecipe.classList.toggle("drink-recipe");
+    drinkRecipe.classList.toggle("show-recipe");
+})
+
+//default value for new customer
+const newCustomer = () => {
+    customer.innerText = "🤔"
+};
+newCustomer();
+
 //Clear newDrink ingredients to start over
 const clearDrink = () => {
     newDrink = {};
@@ -123,43 +135,29 @@ const clearDrink = () => {
 
 newDrinkButton.addEventListener('click', clearDrink);
 
-//dropdown menu
-recipeButton.addEventListener('click', () => {
-    drinkRecipe.classList.toggle("drink-recipe");
-    drinkRecipe.classList.toggle("show-recipe");
-})
+// first click takes order, second click serves drink, third click new customer
+//let count = 0;
+customer.addEventListener("click", () => {
+    if (customer.innerText === "🤔") {
+        takeOrder();
+    } else if (customer.innerText === "🙂" || customer.innerText === "😠") {
+        serveDrink();
+    } else if (customer.innerText === "😋") {
+        takeTip();
+        clearDrink(); //reset drink ingredients list
+    }
+});
 
-//default value for new customer
-const newCustomer = () => {
+const takeOrder = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
+    wordBubble.innerText = `I want a ${drinkOrder.name}.`
     customer.innerText = "🙂"
-    wordBubble.innerText = "Hi. I'm a new customer."
     drinkRecipe.innerText =
     `Price: $${JSON.stringify(drinkOrder.price)}
         ${drinkOrder.glass} glass
         INGREDIENTS:
         ${drinkOrder.ingredients}
         ${drinkOrder.garnish ? drinkOrder.garnish : ''}`;
-    clearDrink(); //reset drink ingredients list
-};
-newCustomer();
-
-// first click takes order, second click serves drink, third click new customer
-let count = 0;
-customer.addEventListener("click", () => {
-    count++;
-    if (count === 1) {
-        takeOrder();
-    } else if (count === 2) {
-        serveDrink();
-    } else {
-        newCustomer();
-        count = 0;
-    }
-});
-
-const takeOrder = () => {
-    wordBubble.innerText = `I want a ${drinkOrder.name}.`
 }
 
 const checkIngredients = (arr1, arr2) => {
@@ -177,9 +175,8 @@ const checkIngredients = (arr1, arr2) => {
 const serveDrink = () => {
     let isMatch = checkIngredients(drinkOrder.ingredients, ingredientsArray);
     if (isMatch && newDrink.glass === drinkOrder.glass && newDrink.garnish === drinkOrder.garnish) {
-        customer.innerText ="😊"
+        customer.innerText = "😋"
         wordBubble.innerText = "Thanks! Here's your tip!"
-        takeTip();
     } else {
         customer.innerText = "😠"
         wordBubble.innerText = "You got my drink wrong."
@@ -196,3 +193,8 @@ const takeTip = () => {
     }
     tipJar.innerText = `Tips: $${tipTotal}`;
 }
+
+//Use flexbox instead of grid or just fix sizing (fix sizing)
+//face appears with no word bubble
+//customer clicks not dependent on count but on state
+//click face to take order
