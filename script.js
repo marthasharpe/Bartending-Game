@@ -163,13 +163,16 @@ const takeOrder = () => {
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
     customer.innerText = "🙂"
     drinkRecipe.innerText =
-        `--------NAME--------
+        `---NAME---
         ${drinkOrder.name}
-        --------GLASS--------
+
+        ---GLASS---
         ${drinkOrder.glass}
-        -----INGREDIENTS-----
-        ${drinkOrder.ingredients}
-        -------GARNISH-------
+
+        ---INGREDIENTS----
+        ${drinkOrder.ingredients.join(", ")}
+
+        ---GARNISH---
         ${drinkOrder.garnish ? drinkOrder.garnish : 'none'}`;
 }
 

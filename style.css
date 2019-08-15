@@ -3,8 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+html, body {
     background-color: rgb(49, 49, 49);
+    height: 100%;
 }
 
 .main {
@@ -16,14 +17,21 @@ body {
     text-align: center;
     background-color: rgb(49, 49, 49);
     font-family: "Trebuchet MS", sans-serif;
+    height: 100%;
 }
 
 .left,
-.center,
-.right {
+.right,
+.middle {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.middle {
+    padding: 1rem 0 2rem 0;
 }
 
 .tip-jar-container,
@@ -57,7 +65,7 @@ body {
 .show-recipe {
     display: block;
     position: absolute;
-    top: 4rem;
+    top: 5.5rem;
     background-color: #f1f1f1;
     min-width: 160px;
     max-width: 360px;
@@ -74,22 +82,29 @@ body {
     display: none;
 }
 
+.game-title {
+    color: rgb(199, 69, 69);
+    border: solid 4px rgb(199, 69, 69);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
+
 .word-bubble-container {
     display: flex;
     justify-content: center;
-    height: 110px;
+    height: 120px;
 }
 
 .customer-container {
     display: flex;
     justify-content: center;
-    height: 240px;
+    height: 200px;
 }
 
 .customer {
     font-size: 10rem;
     cursor: pointer;
-    margin: 1rem;
 }
 
 .show-bubble {
@@ -98,7 +113,7 @@ body {
     height: fit-content;
     border-radius: 50%;
     padding: 1.5rem 2rem;
-    margin: 1rem;
+    margin-top: 2.5rem;
     background-color: white;
     position: relative;
     color: rgb(49, 49, 49);
@@ -130,6 +145,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 300px;
 }
 
 .new-drink {
@@ -140,14 +156,15 @@ body {
     list-style-type: none;
     background-color: #616161;
     border-radius: 1rem;
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     font-size: 1.4rem;
     padding: 1rem 2rem;
     line-height: 2.5rem;
     color: white;
     min-width: 250px;
     min-height: 250px;
+    overflow-y: scroll;
 }
 
 .new-drink-button {
