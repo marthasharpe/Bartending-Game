@@ -30,37 +30,37 @@ const drinkArray = [ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manh
 
 //arrays of supplies
 const glassArray = [
-    {name: 'Shot', image: './images/OldFashioned.png'}, 
-    {name: 'Rocks', image: './images/OldFashioned.png'},
-    {name: 'Highball', image: './images/Highball.png'},
-    {name: 'Cocktail', image: './images/Cocktail.png'},
+    {name: 'Shot', image: './Images/OldFashioned.png'}, 
+    {name: 'Rocks', image: './Images/OldFashioned.png'},
+    {name: 'Highball', image: './Images/Highball.png'},
+    {name: 'Cocktail', image: './Images/Cocktail.png'},
 ];
 const spiritArray = [
-    {name: 'Vodka', image: './images/Vodka.png'},
-    {name: 'Gin', image: './images/Gin.png'},
-    {name: 'Scotch', image: './images/Scotch.png'},
-    {name: 'Bourbon', image: './images/Bourbon.png'},
-    {name: 'Rum', image: './images/Rum.png'},
-    {name: 'Tequila', image: './images/Tequila.png'},
-    {name: 'Triplesec', image: './images/Triple Sec.png'},
-    {name: 'Vermouth', image: './images/Vermouth.png'},
+    {name: 'Vodka', image: './Images/Vodka.png'},
+    {name: 'Gin', image: './Images/Gin.png'},
+    {name: 'Scotch', image: './Images/Scotch.png'},
+    {name: 'Bourbon', image: './Images/Bourbon.png'},
+    {name: 'Rum', image: './Images/Rum.png'},
+    {name: 'Tequila', image: './Images/Tequila.png'},
+    {name: 'Triplesec', image: './Images/Triple Sec.png'},
+    {name: 'Vermouth', image: './Images/Vermouth.png'},
 ];
 const mixerArray = [
-    {name: 'Tonic', image: './images/Tonic.png'},
-    {name: 'Club Soda', image: './images/Club Soda.png'},
-    {name: '7Up', image: './images/7Up.png'},
-    {name: 'Coke', image: './images/Coke.png'},
-    {name: 'Sour Mix', image: './images/Pineapple or Sour.png'},
-    {name: 'O.J.', image: './images/Orange.png'},
-    {name: 'Pineapple', image: './images/Pineapple or Sour.png'},
-    {name: 'Cranberry', image: './images/Cranberry.png'},    
+    {name: 'Tonic', image: './Images/Tonic.png'},
+    {name: 'Club Soda', image: './Images/Club Soda.png'},
+    {name: '7Up', image: './Images/7Up.png'},
+    {name: 'Coke', image: './Images/Coke.png'},
+    {name: 'Sour Mix', image: './Images/Pineapple or Sour.png'},
+    {name: 'O.J.', image: './Images/Orange.png'},
+    {name: 'Pineapple', image: './Images/Pineapple or Sour.png'},
+    {name: 'Cranberry', image: './Images/Cranberry.png'},    
 ];
 const garnishArray = [
-    {name: 'Olive', image: './images/olives.png'},
-    {name: 'Orange', image: './images/OrangeSlice.png'},
-    {name: 'Lemon', image: './images/LemonSlice.png'},
-    {name: 'Lime', image: './images/LimeSlice.png'},
-    {name: 'Cherry', image: './images/Cherries.png'},    
+    {name: 'Olive', image: './Images/olives.png'},
+    {name: 'Orange', image: './Images/OrangeSlice.png'},
+    {name: 'Lemon', image: './Images/LemonSlice.png'},
+    {name: 'Lime', image: './Images/LimeSlice.png'},
+    {name: 'Cherry', image: './Images/Cherries.png'},    
 ];
 
 //initializing variables
