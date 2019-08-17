@@ -5,33 +5,45 @@
 }
 html, body {
     background-color: rgb(49, 49, 49);
-    height: 100%;
+}
+
+.reference-bar {
+    display: flex;
+    justify-content: center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color:rgb(49, 49, 49);
 }
 
 .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: center;
+    margin-top: 5rem;
     align-items: center;
-    min-width: 768px;
+    min-width: 1225px;
     text-align: center;
     background-color: rgb(49, 49, 49);
     font-family: "Trebuchet MS", sans-serif;
-    height: 100%;
 }
 
 .left,
-.right,
-.middle {
+.right{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+    width: 40%;
 }
 
 .middle {
     padding: 1rem 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
 }
 
 .tip-jar-container,
@@ -44,11 +56,19 @@ html, body {
 
 .tip-jar {
     background-color: #616161;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     font-size: 1.4rem;
     color: white;
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 1rem 2rem;
+}
+
+.game-title {
+    color: rgb(199, 69, 69);
+    border: solid 4px rgb(199, 69, 69);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
 }
 
 .recipe-button {
@@ -58,21 +78,22 @@ html, body {
     color: white;
     cursor: pointer;
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 1rem 2rem;
     position: relative;
 }
 
 .show-recipe {
     display: block;
     position: absolute;
-    top: 5.5rem;
+    text-align: center;
+    top: 4rem;
     background-color: #f1f1f1;
     min-width: 160px;
     max-width: 360px;
-    z-index: 1;
+    z-index: 2;
     font-size: 1.4rem;
     padding: 1rem 2rem;
-    line-height: 2.5rem;
+    line-height: 2rem;
     color: white;
     background-color: rgb(49, 49, 49);
     border: solid 4px #616161;
@@ -80,14 +101,6 @@ html, body {
 
 .drink-recipe {
     display: none;
-}
-
-.game-title {
-    color: rgb(199, 69, 69);
-    border: solid 4px rgb(199, 69, 69);
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding: 1rem;
 }
 
 .word-bubble-container {
@@ -99,12 +112,13 @@ html, body {
 .customer-container {
     display: flex;
     justify-content: center;
-    height: 200px;
 }
 
 .customer {
-    font-size: 10rem;
+    font-size: 8rem;
     cursor: pointer;
+    height: fit-content;
+    margin-bottom: 1rem;
 }
 
 .show-bubble {
@@ -113,13 +127,14 @@ html, body {
     height: fit-content;
     border-radius: 50%;
     padding: 1.5rem 2rem;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
     background-color: white;
     position: relative;
     color: rgb(49, 49, 49);
     font-family: "Marker Felt", fantasy;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .show-bubble:after {
@@ -133,7 +148,7 @@ html, body {
 	border-top-color: white;
 	border-bottom: 0;
 	margin-left: -20px;
-	margin-bottom: -20px;
+    margin-bottom: -20px;
 }
 
 .word-bubble {
@@ -145,7 +160,7 @@ html, body {
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 300px;
+    height: 200px;
 }
 
 .new-drink {
@@ -156,13 +171,12 @@ html, body {
     list-style-type: none;
     background-color: #616161;
     border-radius: 1rem;
-    height: 100%;
-    width: 100%;
     font-size: 1.4rem;
     padding: 1rem 2rem;
     line-height: 2.5rem;
     color: white;
-    min-width: 250px;
+    height: 100%;
+    min-width: 200px;
     min-height: 250px;
     overflow-y: scroll;
 }
@@ -174,7 +188,7 @@ html, body {
     border: solid #616161 4px;
     padding: 0.5rem;
     border-radius: 0.5rem;
-    bottom: -1.5rem;
+    bottom: -2.5rem;
     cursor: pointer;
 }
 
@@ -190,6 +204,7 @@ html, body {
     background-color: #616161;
     padding-top: 1rem;
     min-width: 460px;
+    min-height: 200px;
     margin: 1rem;
 }
 
@@ -200,8 +215,16 @@ html, body {
     margin: 0.5rem;
 }
 
-#Old-Fashioned img {
+#Rocks img {
     height: 40%;
+}
+
+#Shot img {
+    height: 25%;
+}
+
+#Cherry img {
+    height: 50%;
 }
 
 .glass img,

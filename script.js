@@ -9,8 +9,8 @@ class Drink {
     }
 }
 
-const scotchRocks = new Drink('Scotch on the Rocks', 'Old-Fashioned', ['Scotch'], 8);
-const bourbonRocks = new Drink('Bourbon on the Rocks', 'Old-Fashioned', ['Bourbon'], 8);
+const scotchRocks = new Drink('Scotch on the Rocks', 'Rocks', ['Scotch'], 8);
+const bourbonRocks = new Drink('Bourbon on the Rocks', 'Rocks', ['Bourbon'], 8);
 const ginTonic = new Drink('Gin and Tonic', 'Highball', ['Gin', 'Tonic'], 4, 'Lime');
 const scotchSoda = new Drink('Scotch and Soda', 'Highball', ['Scotch', 'Club Soda'], 4, 'Lemon');
 const rumCoke = new Drink('Rum and Coke', 'Highball', ['Rum', 'Coke'], 4, 'Cherry');
@@ -20,7 +20,7 @@ const tequilaSunrise = new Drink('Tequila Sunrise', 'Highball', ['Tequila', 'O.J
 const whiskeySour = new Drink('Whiskey Sour', 'Highball', ['Bourbon', 'Sour Mix'], 4, 'Cherry');
 const longIsland = new Drink('Long Island Iced Tea', 'Highball', ['Vodka', 'Rum', 'Gin', 'Tequila', 'Triplesec', 'Coke', 'Sour Mix'], 8, 'Lemon');
 const ginMartini = new Drink('Gin Martini', 'Cocktail', ['Gin', 'Vermouth'], 8, 'Olive');
-const ginMartiniRocks = new Drink('Gin Martini', 'Old-Fashioned', ['Gin', 'Vermouth'], 8, 'Olive');
+const ginMartiniRocks = new Drink('Gin Martini', 'Rocks', ['Gin', 'Vermouth'], 8, 'Olive');
 const manhattan = new Drink('Manhattan', 'Cocktail', ['Bourbon', 'Vermouth'], 8, 'Cherry');
 const cosmopolitan = new Drink('Cosmopolitan', 'Cocktail', ['Vodka', 'Triplesec', 'Cranberry', 'Sour Mix'], 8, 'Lemon');
 const margarita = new Drink('Margarita', 'Cocktail', ['Tequila', 'Triplesec', 'Sour Mix'], 8,'Lime');
@@ -30,7 +30,8 @@ const drinkArray = [ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manh
 
 //arrays of supplies
 const glassArray = [
-    {name: 'Old-Fashioned', image: './images/OldFashioned.png'},
+    {name: 'Shot', image: './images/OldFashioned.png'}, 
+    {name: 'Rocks', image: './images/OldFashioned.png'},
     {name: 'Highball', image: './images/Highball.png'},
     {name: 'Cocktail', image: './images/Cocktail.png'},
 ];
@@ -173,7 +174,10 @@ const takeOrder = () => {
         ${drinkOrder.ingredients.join(", ")}
 
         ---GARNISH---
-        ${drinkOrder.garnish ? drinkOrder.garnish : 'none'}`;
+        ${drinkOrder.garnish ? drinkOrder.garnish : 'none'}
+        
+        ---PRICE---
+        $${drinkOrder.price}`;
 }
 
 const checkIngredients = (arr1, arr2) => {
