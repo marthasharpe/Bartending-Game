@@ -146,12 +146,17 @@ customer.addEventListener("click", () => {
     } else if (customer.innerText === "🙂" || customer.innerText === "😠") {
         serveDrink();
     } else if (customer.innerText === "😋") {
-        wordBubble.classList.toggle("show-bubble");
-        wordBubble.classList.toggle("word-bubble");
+        if (drinkOrder.price < 5) {
+            wordBubble.innerText = "$1";
+        } else {
+            wordBubble.innerText = "$2";
+        }
         clearDrink();
         customer.innerText = "💰";
     } else if (customer.innerText === "💰") {
         customer.innerText = ""
+        wordBubble.classList.toggle("show-bubble");
+        wordBubble.classList.toggle("word-bubble");
         takeTip();
         setTimeout(newCustomer, 1500);
     }
@@ -213,7 +218,3 @@ const takeTip = () => {
     }
     tipJar.innerText = `Tips: $${tipTotal}`;
 }
-
-//get rid of recipe when clicked outside
-//get face to be in fixed position
-//start over button in fixed position, too
