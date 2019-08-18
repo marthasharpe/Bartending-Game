@@ -8,7 +8,7 @@ class Drink {
         this.price = price;
     }
 }
-
+const shotTequila = new Drink('Shot of Tequila', 'Shot', ['Tequila'], 3)
 const scotchRocks = new Drink('Scotch on the Rocks', 'Rocks', ['Scotch'], 8);
 const bourbonRocks = new Drink('Bourbon on the Rocks', 'Rocks', ['Bourbon'], 8);
 const ginTonic = new Drink('Gin and Tonic', 'Highball', ['Gin', 'Tonic'], 4, 'Lime');
@@ -20,13 +20,13 @@ const tequilaSunrise = new Drink('Tequila Sunrise', 'Highball', ['Tequila', 'O.J
 const whiskeySour = new Drink('Whiskey Sour', 'Highball', ['Bourbon', 'Sour Mix'], 4, 'Cherry');
 const longIsland = new Drink('Long Island Iced Tea', 'Highball', ['Vodka', 'Rum', 'Gin', 'Tequila', 'Triplesec', 'Coke', 'Sour Mix'], 8, 'Lemon');
 const ginMartini = new Drink('Gin Martini', 'Cocktail', ['Gin', 'Vermouth'], 8, 'Olive');
-const ginMartiniRocks = new Drink('Gin Martini', 'Rocks', ['Gin', 'Vermouth'], 8, 'Olive');
+const ginMartiniRocks = new Drink('Gin Martini on the Rocks', 'Rocks', ['Gin', 'Vermouth'], 8, 'Olive');
 const manhattan = new Drink('Manhattan', 'Cocktail', ['Bourbon', 'Vermouth'], 8, 'Cherry');
 const cosmopolitan = new Drink('Cosmopolitan', 'Cocktail', ['Vodka', 'Triplesec', 'Cranberry', 'Sour Mix'], 8, 'Lemon');
 const margarita = new Drink('Margarita', 'Cocktail', ['Tequila', 'Triplesec', 'Sour Mix'], 8,'Lime');
 
 //Array of possible drinks
-const drinkArray = [ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manhattan, capeCod, screwdriver, tequilaSunrise, longIsland, cosmopolitan, margarita, scotchRocks, bourbonRocks, ginMartiniRocks];
+const drinkArray = [shotTequila, ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manhattan, capeCod, screwdriver, tequilaSunrise, longIsland, cosmopolitan, margarita, scotchRocks, bourbonRocks, ginMartiniRocks];
 
 //arrays of supplies
 const glassArray = [
