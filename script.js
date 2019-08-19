@@ -115,16 +115,20 @@ let recipeButton = document.getElementsByClassName("recipe-button")[0];
 let drinkRecipe = document.getElementsByClassName("drink-recipe")[0];
 let newDrinkButton = document.getElementsByClassName("new-drink-button")[0];
 
-drinkRecipe.innerText = `1) Click customer to take order.
-2) Add ingredients.
-3) Click customer to serve drink.`
-//dropdown menu
-recipeButton.addEventListener('click', () => {
-    drinkRecipe.classList.toggle("drink-recipe");
-    drinkRecipe.classList.toggle("show-recipe");
-})
+drinkRecipe.innerText = "No drink order yet."
 
-    //default value for new customer
+// open and close dropdown menu
+const showRecipe = () => {
+    drinkRecipe.classList.toggle("show-recipe");
+}
+recipeButton.addEventListener('click', showRecipe);
+document.onclick = (event) => {
+    if (!event.target.matches('.recipe-button') && drinkRecipe.classList.contains("show-recipe")) {
+        showRecipe();
+    }
+}
+
+//default value for new customer
 const newCustomer = () => {
     customer.innerText = "🤔"
     wordBubble.classList.toggle("word-bubble");
@@ -170,20 +174,14 @@ const takeOrder = () => {
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
     customer.innerText = "🙂"
     drinkRecipe.innerText =
-        `---NAME---
-        ${drinkOrder.name}
-
-        ---GLASS---
+        `---GLASS---
         ${drinkOrder.glass}
 
         ---INGREDIENTS----
         ${drinkOrder.ingredients.join(", ")}
 
         ---GARNISH---
-        ${drinkOrder.garnish ? drinkOrder.garnish : 'none'}
-        
-        ---PRICE---
-        $${drinkOrder.price}`;
+        ${drinkOrder.garnish ? drinkOrder.garnish : 'none'}`
 }
 
 const checkIngredients = (arr1, arr2) => {
