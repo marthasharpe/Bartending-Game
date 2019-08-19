@@ -127,6 +127,9 @@ recipeButton.addEventListener('click', () => {
     //default value for new customer
 const newCustomer = () => {
     customer.innerText = "🤔"
+    wordBubble.classList.toggle("word-bubble");
+    wordBubble.classList.toggle("show-bubble");
+    wordBubble.innerText = "Click me."
 };
 setTimeout(newCustomer, 1000);
 
@@ -164,8 +167,6 @@ customer.addEventListener("click", () => {
 
 const takeOrder = () => {
     drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
-    wordBubble.classList.toggle("word-bubble");
-    wordBubble.classList.toggle("show-bubble");
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
     customer.innerText = "🙂"
     drinkRecipe.innerText =
