@@ -145,8 +145,7 @@ const clearDrink = () => {
 }
 newDrinkButton.addEventListener('click', clearDrink);
 
-// first click takes order, second click serves drink, third click new customer
-//let count = 0;
+//Update customer icon
 customer.addEventListener("click", () => {
     if (customer.innerText === "🤔") {
         takeOrder();

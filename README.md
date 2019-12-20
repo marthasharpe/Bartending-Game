@@ -8,7 +8,7 @@ This was my first time dynamically populating the HTML.
 
 The concept and design for this game came from my days as a bartender.
 
-Visit the page [here](http://marthadawn.com/Bartender%20Game/index.html "Bartending Game") or watch the intro video below.
+Visit the page [here](https://bartending-game.netlify.com/ "Bartending Game") or watch the video below.
 
 [![Bartending Game](http://img.youtube.com/vi/zLNYzg27QPk/0.jpg)](http://www.youtube.com/watch?v=zLNYzg27QPk "Bartending Game")
 
