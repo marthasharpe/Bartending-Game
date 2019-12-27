@@ -246,7 +246,7 @@ html, body {
 }
 
 /* Tablet */
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
     .middle {
         order: -1;
     }
@@ -258,7 +258,7 @@ html, body {
 }
 
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     .reference-bar {
         flex-direction: column;
     }
