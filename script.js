@@ -26,16 +26,16 @@ const cosmopolitan = new Drink('Cosmopolitan', 'Cocktail', ['Vodka', 'Triplesec'
 const margarita = new Drink('Margarita', 'Cocktail', ['Tequila', 'Triplesec', 'Sour Mix'], 8,'Lime');
 
 //Array of possible drinks
-const drinkArray = [shotTequila, ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manhattan, capeCod, screwdriver, tequilaSunrise, longIsland, cosmopolitan, margarita, scotchRocks, bourbonRocks, ginMartiniRocks];
+const drinks = [shotTequila, ginTonic, ginMartini, scotchSoda, rumCoke, whiskeySour, manhattan, capeCod, screwdriver, tequilaSunrise, longIsland, cosmopolitan, margarita, scotchRocks, bourbonRocks, ginMartiniRocks];
 
 //arrays of supplies
-const glassArray = [
+const glasses = [
     {name: 'Shot', image: './Images/OldFashioned.png'}, 
     {name: 'Rocks', image: './Images/OldFashioned.png'},
     {name: 'Highball', image: './Images/Highball.png'},
     {name: 'Cocktail', image: './Images/Cocktail.png'},
 ];
-const spiritArray = [
+const spirits = [
     {name: 'Vodka', image: './Images/Vodka.png'},
     {name: 'Gin', image: './Images/Gin.png'},
     {name: 'Scotch', image: './Images/Scotch.png'},
@@ -45,7 +45,7 @@ const spiritArray = [
     {name: 'Triplesec', image: './Images/Triple Sec.png'},
     {name: 'Vermouth', image: './Images/Vermouth.png'},
 ];
-const mixerArray = [
+const mixers = [
     {name: 'Tonic', image: './Images/Tonic.png'},
     {name: 'Club Soda', image: './Images/Club Soda.png'},
     {name: '7Up', image: './Images/7Up.png'},
@@ -55,7 +55,7 @@ const mixerArray = [
     {name: 'Pineapple', image: './Images/Pineapple or Sour.png'},
     {name: 'Cranberry', image: './Images/Cranberry.png'},    
 ];
-const garnishArray = [
+const garnishs = [
     {name: 'Olive', image: './Images/olives.png'},
     {name: 'Orange', image: './Images/OrangeSlice.png'},
     {name: 'Lemon', image: './Images/LemonSlice.png'},
@@ -101,10 +101,10 @@ const populateList = (supplyArray, supplyType) => {
         })
     })
 }
-populateList(glassArray, 'glass');
-populateList(spiritArray, 'spirit');
-populateList(mixerArray, 'mixer');
-populateList(garnishArray, 'garnish');
+populateList(glasses, 'glass');
+populateList(spirits, 'spirit');
+populateList(mixers, 'mixer');
+populateList(garnishs, 'garnish');
 
 //Elements and event listeners
 const wordBubble = document.getElementsByClassName("word-bubble")[0];
@@ -169,7 +169,7 @@ customer.addEventListener("click", () => {
 });
 
 const takeOrder = () => {
-    drinkOrder = drinkArray[Math.floor (Math.random() * drinkArray.length)];
+    drinkOrder = drinks[Math.floor (Math.random() * drinks.length)];
     wordBubble.innerText = `I want a ${drinkOrder.name}.`
     customer.innerText = "🙂"
     drinkRecipe.innerText =

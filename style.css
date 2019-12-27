@@ -31,11 +31,9 @@ html, body {
 .right{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 30%;
     margin: auto;
-    min-width: 320px;
 }
 
 .tip-jar-container,
@@ -247,8 +245,20 @@ html, body {
     color: white;
 }
 
-/* Mobile design */
-@media (max-width: 767px) {
+/* Tablet */
+@media (max-width: 1024px) {
+    .middle {
+        order: -1;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
     .reference-bar {
         flex-direction: column;
     }
